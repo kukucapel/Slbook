@@ -396,7 +396,7 @@
       
         <div class="main_content" id="main_content">
 
-          {% if articles.count > 0 %}  
+          {% if articles.count > 0 and post_id == None %}  
             {% for articles in articles reversed %}
             <div class="article_container paper">
               <h2 class="article_title">{{articles.title}}</h2>
@@ -406,8 +406,21 @@
                 <img src=../static/img/{{articles.image}} width="200" height="100">
                 {% endif %}
               </div>
+              <div>
+                <a href="/post/{{articles.id}}">{{articles.title}}</a>
+              </div>
             </div>
             {% endfor %}
+          {% elif post_id != None %}
+          <div class="article_container paper">
+            <h2 class="article_title">{{articles.title}}</h2>
+            <div class="article_text">{{articles.article_text}}</div>
+            <div>
+              {% if articles.image != Null %}
+              <img src=../static/img/{{articles.image}} width="200" height="100">
+              {% endif %}
+            </div>
+          </div>
           {% endif %}
         </div>
     </div>
