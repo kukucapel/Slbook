@@ -1,0 +1,427 @@
+{% load static %}
+<html>
+  <head>
+    <title> Тестовая страница </title>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="shortcut icon" href="{% static "img/logo_full.png" %}">
+
+    <!-- Общие стили и JS для всех страниц -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" id='styles_link' href="{% static "css/global_styles_blue.css" %}" />
+    <link rel="stylesheet" href="{% static "css/global_animations.css" %}" />
+
+
+    <script src="{% static "js/global_functions.js" %}"></script>
+
+     <!-- Стили и JS локальной страницы 
+     
+    <link rel="stylesheet" id='styles_link' href=".css" />
+    <link rel="stylesheet" id='styles_link' href=".css" />
+
+    <script src=".js"></script>-->
+    
+
+
+  </head>
+
+
+
+
+  <body onload="show_body()"  id='body'>
+
+    <!-- Анимация загрузки -->
+
+    <div class="onload_container" id="loading">
+      
+      <div class="onload_animation"> </div>
+    
+    </div>
+
+         <!-- Меню для телефонов -->
+
+         <div class="mobile_menu" id="mob_cont">
+
+          <div class="mobile_search_container" id="mobile_search_container">
+  
+            <div class="mobile_input_container">
+              <input class='top_search_input' id="mobile_search_input" type='text' placeholder="Поиск по сайту..."> 
+              <div class='clear_button'>  </div>
+            </div>
+
+            <div class="mobile_search_options_block paper">
+
+              <a class="mobile_search_option_zero">  </a>
+              <a class="mobile_search_option"> Виртуальная экскурсия </a>
+              <a class="mobile_search_option"> Отдел автоматизации </a>
+              <a class="mobile_search_option"> Отдел комплектования </a>
+              <a class="mobile_search_option"> История библиотеки </a>
+              <a class="mobile_search_option"> Архив новостей </a>
+
+            </div>
+
+
+    
+  
+          </div>
+  
+          <div class="mobile_navigation_container">
+  
+            <div class="mobile_navigation">
+          
+              <div class="menu_container">
+  
+                <div class="menu_button" id="button_0" onclick="mobile_menu(0)"> О библиотеке </div>
+  
+                <div class="menu_options" id="option_0">
+                    <div class='menu_option'> История </div>
+                    <div class='menu_option'> Структура </div>
+                    <div class='menu_option'> Документы </div>
+                    <div class='menu_option'> Партнёрство </div>
+                    <div class='menu_option'> Официальные документы </div>
+                    <div class='menu_option'> Библиотека в СМИ </div>
+                </div>
+                
+              </div>
+  
+              <div class="menu_container">
+  
+                <div class="menu_button" id="button_1" onclick="mobile_menu(1)"> Читателям </div>
+  
+                <div class="menu_options" id="option_1">
+                    <div class='menu_option'> Досуг  </div>
+                    <div class='menu_option'> Услуги</div>
+                    <div class='menu_option'> Правила </div>
+                    <div class='menu_option'> Средства реабилитации  </div>
+                    <div class='menu_option'> Полезные ссылки </div>
+                    <a href="http://jjff.ru/slbook"><div class='menu_option'> Виртуальная карта библиотеки </div></a>
+                </div>
+                
+              </div>
+  
+              <div class="menu_container">
+  
+                <div class="menu_button" id="button_2" onclick="mobile_menu(2)"> Ресурсы </div>
+  
+                <div class="menu_options" id="option_2">
+                    <div class='menu_option'> Фонды библиотеки </div>
+                    <div class='menu_option'> Новая литература </div>
+                    <div class='menu_option'> Печатные издания </div>
+                    <div class='menu_option'> Издательская деятельность </div>
+                    <a href="http://jjff.ru/" target="_blank"> <div class='menu_option'> Тифлокаталог </div> </a>
+                    <div class='menu_option'> Электронные библиотеки </div>
+                </div>
+                
+              </div>
+  
+              <div class="menu_container">
+  
+                <div class="menu_button" id="button_3" onclick="mobile_menu(3)"> События </div>
+  
+                <div class="menu_options" id="option_3">
+                    <div class='menu_option'> Афиша </div>
+                    <div class='menu_option'> Новости </div>
+                    <div class='menu_option'> Выставки </div>
+                    <div class='menu_option'> Акции </div>
+                    <div class='menu_option'> Конференции, семинары, конкурсы </div>
+                </div>
+                
+              </div>
+  
+              <div class="menu_container">
+  
+                <div class="menu_button" id="button_4" onclick="mobile_menu(4)"> Коллегам </div>
+  
+                <div class="menu_options" id="option_4">
+                    <div class='menu_option'> Проекты </div>
+                    <div class='menu_option'> Сценарии </div>
+                    <div class='menu_option'> Тематические планы </div>
+                    <div class='menu_option'> Знаменательные даты </div>
+                    <div class='menu_option'> Рекомендательные списки </div>
+                </div>
+                
+              </div>
+  
+              <div class="menu_container">
+  
+                <div class="menu_button" id="button_5" onclick="mobile_menu(5)"> Контакты </div>
+  
+                <div class="menu_options" id="option_5">
+                    <div class='menu_option'> Телефоны </div>
+                    <div class='menu_option'> Библиотека на карте </div>
+                </div>
+                
+              </div>
+  
+            </div>
+          </div>
+  
+          <div class='mobile_buttons_block'>
+            
+            <a class='top_button'  target="_blank" href="https://vk.com/biblostrov">
+              <div class='top_button_img' id='vk_button'> </div>
+            </a>
+  
+            <a class='top_button'  target="_blank" href="https://t.me/biblostov">
+              <div class='top_button_img' id='tg_button'> </div>
+            </a>
+  
+            <a class='top_button' target="_blank" href="https://ok.ru/group/54523256438786" >
+              <div class='top_button_img' id='ok_button'> </div>
+            </a>
+  
+            <a class='top_button'  target="_blank" href="https://www.youtube.com/channel/UCA2C_qWCxFizkOUtimDhZrQ" >
+              <div class='top_button_img' id='yt_button'> </div>
+            </a>
+
+            <a class='top_button'  target="_blank" href="http://slbook-kaluga.ru/?template=slbook_ic23" title = "Старый сайт">
+              <div class='top_button_img' id='old_site'> </div>
+            </a>
+  
+            <div class='top_button' id="eye_button">
+            </div>
+
+  
+          </div>
+  
+        </div>
+  
+         <!-- Затемнённый экран -->
+
+        <a onclick="hide_pic()">  <div class="black_screen" id="script_screen">
+      
+        </div></a>
+
+  <div class="wrapper" id="wrapper"> 
+
+    <header>
+
+       <!-- Верхняя шапка -->
+
+      <div class='header_container'>
+
+        <div class="eyesight_container"> Версия для слабовидящих </div>
+        <div class="eyesight_instruments"> 
+
+          <div class="eyesight_button" id="eyesight_blue"> </div>
+          <div class="eyesight_button" id="eyesight_white"> </div>
+          <div class="eyesight_button" id="eyesight_black"> </div>
+
+          <div class="eyesight_button" id="eyesight_image"> </div>
+
+          <div class="eyesight_button" id="eyesight_close"> </div>
+
+        </div>
+
+        <a name="up" class='logo_block' href="http://slbook-kaluga.ru/" >
+    
+        <div class='logo_img picture'></div>
+    
+            <div class='top_name'>
+    
+              <span> Калужская областная </span>
+              <span> специальная  библиотека  </span>
+              <span> для слепых им. Н. Островского </span>
+    
+            </div>
+    
+          </a>
+          
+    
+            <div class='search_block'>
+    
+              <div class="top_input_container">
+                <input class='top_search_input'id='pc_search_input' type='text' placeholder="Поиск по сайту...">
+                <div class="paper search_options">
+                
+                  <div class="search_option_zero">  </div>
+                  <a class="search_option" href="map.html">Виртуальная экскурсия по библиотеке </a>
+                  <a class="search_option">Отдел автоматизации</a>
+                  <a class="search_option">Отдел комплектования</a>
+                  <a class="search_option">Отдел каталогизации</a>
+                  <a class="search_option">Страница Гениевой Е.Ю.</a>
+                  <a class="search_option">История библиотеки</a>
+                  <a class="search_option">Официальные документы </a>
+                  <a class="search_option">Контакты </a>
+                 
+
+                </div>
+              </div> 
+    
+            </div>
+    
+
+
+            <div class='top_buttons_block'>
+          
+              <a class='top_button'  target="_blank" href="https://vk.com/biblostrov">
+                <div class='top_button_img' id='vk_button'> </div>
+              </a>
+    
+              <a class='top_button'  target="_blank" href="https://t.me/biblostov">
+                <div class='top_button_img' id='tg_button'> </div>
+              </a>
+
+              <a class='top_button' target="_blank" href="https://ok.ru/group/54523256438786" >
+                <div class='top_button_img' id='ok_button'> </div>
+              </a>
+
+              <a class='top_button'  target="_blank" href="https://www.youtube.com/channel/UCA2C_qWCxFizkOUtimDhZrQ" >
+                <div class='top_button_img' id='yt_button'> </div>
+              </a>
+
+              <a class='top_button'  target="_blank" href="http://slbook-kaluga.ru/?template=slbook_ic23" title = "Старый сайт">
+                <div class='top_button_img' id='old_site'> </div>
+              </a>
+
+            </div>
+
+            <div class="mobile_menu_button" id="mmb" onclick="show_mobile_menu()"> </div>
+    
+          </div>
+    
+ 
+
+
+          <div class="header_menu">
+
+            <div class="header_menu_container">
+
+              <div class="menu_container">
+
+                <div class="menu_button"> О библиотеке </div>
+
+                <div class="menu_options">
+                    <div class='menu_option'> История </div>
+                    <div class='menu_option'> Структура </div>
+                    <div class='menu_option'> Документы </div>
+                    <div class='menu_option'> Партнёрство </div>
+                    <div class='menu_option'> Официальные документы </div>
+                    <div class='menu_option'> Библиотека в СМИ </div>
+                </div>
+                
+              </div>
+
+
+              
+              <div class="menu_container">
+
+                <div class="menu_button"> Читателям </div>
+
+                <div class="menu_options">
+                    <div class='menu_option'> Досуг  </div>
+                    <div class='menu_option'> Услуги</div>
+                    <div class='menu_option'> Правила </div>
+                    <div class='menu_option'> Средства реабилитации  </div>
+                    <div class='menu_option'> Полезные ссылки </div>
+                    <a href="http://jjff.ru/slbook"><div class='menu_option'> Виртуальная карта библиотеки </div> </a>
+                </div>
+                
+              </div>
+
+
+
+              <div class="menu_container">
+
+                <div class="menu_button"> Ресурсы </div>
+
+                <div class="menu_options">
+                    <div class='menu_option'> Фонды библиотеки </div>
+                    <div class='menu_option'> Новая литература </div>
+                    <div class='menu_option'> Печатные издания </div>
+                    <div class='menu_option'> Издательская деятельность </div>
+                    <a href="http://jjff.ru/" target="_blank"> <div class='menu_option'> Тифлокаталог </div> </a>
+                    <div class='menu_option'> Электронные библиотеки </div>
+                </div>
+                
+              </div>
+
+
+
+              <div class="menu_container">
+
+                <div class="menu_button"> События </div>
+
+                <div class="menu_options">
+                    <div class='menu_option'> Афиша </div>
+                    <div class='menu_option'> Новости </div>
+                    <div class='menu_option'> Выставки </div>
+                    <div class='menu_option'> Акции </div>
+                    <div class='menu_option'> Конференции, семинары, конкурсы </div>
+                </div>
+                
+              </div>
+
+
+
+              <div class="menu_container">
+
+                <div class="menu_button"> Коллегам </div>
+
+                <div class="menu_options">
+                    <div class='menu_option'> Проекты </div>
+                    <div class='menu_option'> Сценарии </div>
+                    <div class='menu_option'> Тематические планы </div>
+                    <div class='menu_option'> Знаменательные даты </div>
+                    <div class='menu_option'> Рекомендательные списки </div>
+                </div>
+                
+              </div>
+
+
+
+              <div class="menu_container">
+
+                <div class="menu_button"> Контакты </div>
+
+                <div class="menu_options">
+                    <div class='menu_option'> Телефоны </div>
+                    <div class='menu_option'> Библиотека на карте </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          
+    </header>
+    
+
+     <!-- Основной контент -->
+
+    
+    <div class="main_body" id="main_body">
+      
+        <div class="main_content" id="main_content">
+
+          {% if articles.count > 0 %}  
+            {% for articles in articles reversed %}
+            <div class="article_container paper">
+              <h2 class="article_title">{{articles.title}}</h2>
+              <div class="article_text">{{articles.article_text}}</div>
+              <div>
+                {% if articles.image != Null %}
+                <img src=../static/img/{{articles.image}} width="200" height="100">
+                {% endif %}
+              </div>
+            </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+    </div>
+    
+
+     <!-- Нижняя шапка -->
+
+    <footer>
+      <div class='footer_container flex'>
+        <span> Калужская областная специальная библиотека для слепых им.&nbspН.&nbspОстровского. </span>
+      </div>
+    </footer>
+
+  </div>
+
+  </body>
+</html>
