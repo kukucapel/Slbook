@@ -725,7 +725,10 @@ header{
 }
 
 
-
+.number_page{
+	display: flex;
+	justify-content: center;
+}
 
 
 /* Нижняя панель */
