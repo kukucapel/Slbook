@@ -1,13 +1,16 @@
 from django.contrib import admin
 from django.urls import path
-from main import views
 from django.conf.urls.static import static
 from django.conf import settings
 
+from main import views as main_views
+from about import views as about_views
+
 urlpatterns = [
-    path('', views.index),
+    path('', main_views.index),
     path('admin/', admin.site.urls),
-    path('media/<int:post_id>', views.show_post),
-    path('page/<int:number_page>', views.main),
+    path('post/<int:post_id>', main_views.show_post),
+    path('page/<int:number_page>', main_views.main),
+    path('about/<str:name_part>', about_views.history)
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

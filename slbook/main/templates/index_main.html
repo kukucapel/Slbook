@@ -77,12 +77,12 @@
                 <div class="menu_button" id="button_0" onclick="mobile_menu(0)"> О библиотеке </div>
   
                 <div class="menu_options" id="option_0">
-                    <div class='menu_option'> История </div>
-                    <div class='menu_option'> Структура </div>
-                    <div class='menu_option'> Документы </div>
-                    <div class='menu_option'> Партнёрство </div>
-                    <div class='menu_option'> Официальные документы </div>
-                    <div class='menu_option'> Библиотека в СМИ </div>
+                  <div class='menu_option'> <a class="menu_option" href="/about/history">История</a> </div>
+                  <div class='menu_option'> <a class="menu_option" href="/about/structure">Структура</a> </div>
+                  <div class='menu_option'> <a class="menu_option" href="/about/documents">Документы</a> </div>
+                  <div class='menu_option'> <a class="menu_option" href="/about/partnership">Партнёрство</a> </div>
+                  <div class='menu_option'> <a class="menu_option" href="/about/official">Официальные документы</a> </div>
+                  <div class='menu_option'> <a class="menu_option" href="/about/media">Библиотека в СМИ</a> </div>
                 </div>
                 
               </div>
@@ -216,7 +216,7 @@
 
         </div>
 
-        <a name="up" class='logo_block' href="http://slbook-kaluga.ru/" >
+        <a name="up" class='logo_block' href="/" >
     
         <div class='logo_img picture'></div>
     
@@ -295,12 +295,12 @@
                 <div class="menu_button"> О библиотеке </div>
 
                 <div class="menu_options">
-                    <div class='menu_option'> История </div>
-                    <div class='menu_option'> Структура </div>
-                    <div class='menu_option'> Документы </div>
-                    <div class='menu_option'> Партнёрство </div>
-                    <div class='menu_option'> Официальные документы </div>
-                    <div class='menu_option'> Библиотека в СМИ </div>
+                    <div class='menu_option'> <a class="menu_option" href="/about/history">История</a> </div>
+                    <div class='menu_option'> <a class="menu_option" href="/about/structure">Структура</a> </div>
+                    <div class='menu_option'> <a class="menu_option" href="/about/documents">Документы</a> </div>
+                    <div class='menu_option'> <a class="menu_option" href="/about/partnership">Партнёрство</a> </div>
+                    <div class='menu_option'> <a class="menu_option" href="/about/official">Официальные документы</a> </div>
+                    <div class='menu_option'> <a class="menu_option" href="/about/media">Библиотека в СМИ</a> </div>
                 </div>
                 
               </div>
@@ -393,34 +393,72 @@
 
     
     <div class="main_body" id="main_body">
-      
+        <div class = "left_menu">
+
+        </div>
         <div class="main_content" id="main_content">
 
           {% if articles.count > 0 and post_id == None %}  
             {% for articles in articles reversed %}
             
             {% if articles.date_new <= current_date %}
-            <div class="article_container paper">
+            <div class="article_container article_paper">
               <h2 class="article_title">{{articles.title}}</h2>
-              <div class="article_text">{{articles.article_text}}</div>
-              <div>
-                {% if articles.image != Null %}
-                <img src=/media/{{articles.image}} width="200" height="100">
-                {% endif %}
+              <div class="article_body">
+                <div class="article_text">
+                  {% if articles.image != Null %}
+                  {% if articles.image_position == 'L' %}
+                  <img src=/media/{{articles.image}} class="paper" width="308" height=auto style="float: left; margin: 0 10px 0 0;">
+                  {% else %}
+                  <img src=/media/{{articles.image}} class="paper" width="308" height=auto style="float: right; margin: 0 10px 0 0;">
+                  {% endif %}
+                  {% endif %}
+                  {{articles.article_text}}
+                </div>
               </div>
-              <div>
-                <a href="/media/{{articles.id}}">{{articles.title}}</a>
+              <div class="article_footer">
+                <div class="article_date">{{articles.date_new}}</div>
+                <div class="article_more">
+                  <a href="/post/{{articles.id}}">Подробнее>></a>
+                </div>
               </div>
             </div>
             
             {% endif %}
             
             {% endfor %}
-            <div class="number_page">
-              {% if count_page >= 1 %}
-                {% for page in pages %}
-                <a href="/page/{{page}}">{{page}}</a>
-                {% endfor %}
+            <div class="number_page_block">
+              {% if count_page > 1 %}
+                <div class="number_page">
+                  {% if current_page != 1 %}
+                    <a href="/page/1" class="a_page"><div class="page_box article_paper"><h2><<</h2></div></a>
+                  {% else %}
+                    <a class="a_page" style="opacity: 0.5;"><div class="page_box_block article_paper"><h2><<</h2></div></a>
+                  {% endif %}
+                  {% if minus != 0 %}
+                    <a class="a_page" href="/page/{{minus}}"><div class="page_box article_paper"><h2><</h2></div></a>
+                  {% else %}
+                    <a class="a_page" style="opacity: 0.5;"><div class="page_box_block article_paper"><h2><</h2></div></a>
+                  {% endif %}
+                  {% for page in pages %}
+                    {% if page != current_page%}
+                      <a class="a_page" href="/page/{{page}}"><div class="page_box article_paper"><h4>{{page}}</h4></div></a>
+                    {% else %}
+                      <a class="a_page" ><div style="background-color: #134C85; color: white; text-decoration: underline;" class="page_box_block article_paper"><h4>{{page}}</h4></div></a>
+                    {% endif %}
+                  {% endfor %}
+                  {% if plus != 0 %}
+                    <a class="a_page" href="/page/{{plus}}"><div class="page_box article_paper"><h2>></h2></div></a>
+                  {% else %}
+                    <a class="a_page" style="opacity: 0.5;" ><div class="page_box_block article_paper"><h2>></h2></div></a>
+                  {% endif %}
+                  {% if current_page != last %}
+                  <a class="a_page" href="/page/{{last}}"><div class="page_box article_paper"><h2>>></h2></div></a>
+                  {% else %}
+                  <a class="a_page" style="opacity: 0.5;"><div class="page_box_block article_paper"><h2>>></h2></div></a>
+                  {% endif %}
+
+                </div>
               {% endif %}
             </div>  
           {% elif post_id != None %}
@@ -429,10 +467,24 @@
             <div class="article_text">{{articles.article_text}}</div>
             <div>
               {% if articles.image != Null %}
-              <img src={{articles.image}} width="200" height="100">
+              <img src=/media/{{articles.image}} width="200" height="100">
               {% endif %}
             </div>
           </div>
+          {% endif %}
+        </div>
+        <div class="right_menu">
+          {% if rightNews.count > 0 %}
+            <div class="right_menu_str">
+              <h3>Полезные ссылки</h3>
+            </div>
+            {% for rightNews in rightNews %}
+            <div class="right_new">
+              <a href="{{rightNews.href}}">
+                <img src="/media/{{rightNews.image}}" class="paper" width="200px" height=auto>
+              </a> 
+            </div>
+            {% endfor %}
           {% endif %}
         </div>
     </div>
