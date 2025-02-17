@@ -11,11 +11,11 @@
     <!-- Общие стили и JS для всех страниц -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <link rel="stylesheet" id='styles_link' href="{% static "css/global_styles_blue.css" %}" />
+    <link rel="stylesheet" id='styles_link' href="{% static "css/global_styles_blue_main.css" %}" />
     <link rel="stylesheet" href="{% static "css/global_animations.css" %}" />
 
 
-    <script src="{% static "js/global_functions.js" %}"></script>
+    <script src="{% static "js/global_functions_main.js" %}"></script>
 
      <!-- Стили и JS локальной страницы 
      
@@ -394,84 +394,73 @@
     
     <div class="main_body" id="main_body">
         <div class = "left_menu">
-
+          <a href="https://edu.gov.ru/god_pedagoga_i_nastavnika">
+            <img style="max-width: 200px;" src="{% static "img/80.png" %}">
+          </a>
         </div>
         <div class="main_content" id="main_content">
+          <div class="info_container">
 
-          {% if articles.count > 0 and post_id == None %}  
-            {% for articles in articles reversed %}
-            
-            {% if articles.date_new <= current_date %}
-            <div class="article_container article_paper">
-              <h2 class="article_title">{{articles.title}}</h2>
-              <div class="article_body">
-                <div class="article_text">
-                  {% if articles.image != Null %}
-                  {% if articles.image_position == 'L' %}
-                  <img src=/media/{{articles.image}} class="paper" width="308" height=auto style="float: left; margin: 0 10px 0 0;">
-                  {% else %}
-                  <img src=/media/{{articles.image}} class="paper" width="308" height=auto style="float: right; margin: 0 10px 0 0;">
-                  {% endif %}
-                  {% endif %}
-                  {{articles.article_text}}
-                </div>
+            <div class="info_about_us_container paper">
+              <div class="score">
+                
+                <a class="a_score" href="https://forms.mkrf.ru/e/2579/xTPLeBU7/?ap_orgcode=223907">
+                  <h2 style="width: 700px;">Оценка удовлетворенности граждан России работой государственных и муниципальных организаций культуры, искусства и народного творчества</h2>
+                  <img style="max-width: 800px; height: auto; margin-top: 20px;" class="paper" src="{%static "img/Score.jpg" %}">
+                </a>
               </div>
-              <div class="article_footer">
-                <div class="article_date">{{articles.date_new}}</div>
-                <div class="article_more">
-                  <a href="/post/{{articles.id}}">Подробнее>></a>
-                </div>
-              </div>
-            </div>
-            
-            {% endif %}
-            
-            {% endfor %}
-            <div class="number_page_block">
-              {% if count_page > 1 %}
-                <div class="number_page">
-                  {% if current_page != 1 %}
-                    <a href="/page/1" class="a_page"><div class="page_box article_paper"><h2><<</h2></div></a>
-                  {% else %}
-                    <a class="a_page" style="opacity: 0.5;"><div class="page_box_block article_paper"><h2><<</h2></div></a>
-                  {% endif %}
-                  {% if minus != 0 %}
-                    <a class="a_page" href="/page/{{minus}}"><div class="page_box article_paper"><h2><</h2></div></a>
-                  {% else %}
-                    <a class="a_page" style="opacity: 0.5;"><div class="page_box_block article_paper"><h2><</h2></div></a>
-                  {% endif %}
-                  {% for page in pages %}
-                    {% if page != current_page%}
-                      <a class="a_page" href="/page/{{page}}"><div class="page_box article_paper"><h4>{{page}}</h4></div></a>
-                    {% else %}
-                      <a class="a_page" ><div style="background-color: #134C85; color: white; text-decoration: underline;" class="page_box_block article_paper"><h4>{{page}}</h4></div></a>
-                    {% endif %}
-                  {% endfor %}
-                  {% if plus != 0 %}
-                    <a class="a_page" href="/page/{{plus}}"><div class="page_box article_paper"><h2>></h2></div></a>
-                  {% else %}
-                    <a class="a_page" style="opacity: 0.5;" ><div class="page_box_block article_paper"><h2>></h2></div></a>
-                  {% endif %}
-                  {% if current_page != last %}
-                  <a class="a_page" href="/page/{{last}}"><div class="page_box article_paper"><h2>>></h2></div></a>
-                  {% else %}
-                  <a class="a_page" style="opacity: 0.5;"><div class="page_box_block article_paper"><h2>>></h2></div></a>
-                  {% endif %}
+              <div class="info_about_us_content">
+                <h2>Информация</h2>
+                <p>
+            Напоминаем, что Калужская областная специальная библиотека для слепых им. Н. Островского 
+            предлагает к Вашим услугам бесплатный удаленный доступ к следующим электронным библиотекам:
 
-                </div>
-              {% endif %}
-            </div>  
-          {% elif post_id != None %}
-          <div class="article_container paper">
-            <h2 class="article_title">{{articles.title}}</h2>
-            <div class="article_text">{{articles.article_text}}</div>
-            <div>
-              {% if articles.image != Null %}
-              <img src=/media/{{articles.image}} width="200" height="100">
-              {% endif %}
+                <a class="a_info" href="https://biblio.litres.ru/">- Электронная библиотечная система  «ЛитРес: Библиотека»</a>
+                <a class="a_info" href="https://www.av3715.ru">- Первая Интернациональная Онлайн-Библиотека  для инвалидов по зрению «Логос»</a>
+                 
+                
+            Пишите нам, получайте пароль и читайте!
+                
+            По интересующим вопросам обращайтесь по электронной почте: tiflotech@mail.ru
+                
+            С Вами на связи:
+
+                - заведующая отделом тифлоинформационных технологий Олимпиева Юлия Александровна;
+                - заведующий отделом автоматизации Крысин Иван Александрович.</p>
+              </div>
             </div>
           </div>
-          {% endif %}
+          <div class="news_title">
+            <h1>Новости</h1>  
+          </div>
+          <div class="news_container_preview">
+            <div class="news">
+              {% for article_preview in article_preview %}
+              <div class="news_body paper">
+                <h3 class="article_title">{{article_preview.title}}</h3>
+                <div class="article_body">
+                  <div class="article_text">
+                    {% if article_preview.image != Null %}
+                    {% if article_preview.image_position == 'L' %}
+                    <img src=/media/{{article_preview.image}} class="paper" width="308" height=auto style="float: left; margin: 0 10px 0 0;">
+                    {% else %}
+                    <img src=/media/{{article_preview.image}} class="paper" width="308" height=auto style="float: right; margin: 0 10px 0 0;">
+                    {% endif %}
+                    {% endif %}
+                    {{article_preview.article_text}}
+                  </div>
+                </div>
+              </div> 
+              {% endfor %}
+            </div>
+          </div> 
+          <a href="/page/1">
+            <div class="button_to_all_articles article_paper">
+              <h2>Ко всем новостям</h2>
+            </div>
+          </a>
+          
+         
         </div>
         <div class="right_menu">
           {% if rightNews.count > 0 %}

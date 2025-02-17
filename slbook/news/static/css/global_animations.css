@@ -1,0 +1,99 @@
+@keyframes show_body {
+  from{
+    opacity: 0.2;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@keyframes show{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@keyframes hide{
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}
+
+
+@keyframes show_mobile_option {
+  from{
+    width: 0px;
+  }
+  to{
+    width: auto;
+  }
+}
+
+@keyframes hide_mobile_option {
+  from{
+    width: auto;
+  }
+  to{
+    width: 0px;
+  }
+}
+
+@keyframes show_eyesight{
+  from{
+    height: 0px;
+  }
+  to{
+    height: 30px;
+  }
+}
+
+@keyframes hide_eyesight{
+  from{
+    height: 30px;
+  }
+  to{
+    height: 0px;
+  }
+}
+
+
+@keyframes show_left_menu {
+  from{
+    margin-left: -150px;
+  }
+  to{
+    margin-left: 0px;
+  }
+}
+
+
+@keyframes show_lm_block {
+  from{
+    width: 175px;
+    height: 175px;
+  }
+  to{
+    width: 185px;
+    height: 185px;
+  }
+}
+
+@keyframes show_bottom_img {
+  
+  from{
+    width: 150px;
+    height: 75px;
+   
+  }
+  to{
+    width: 175px;
+    height: 95px;
+  }
+
+}

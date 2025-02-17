@@ -699,7 +699,7 @@ header{
 
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 
 	opacity: 1;
@@ -715,7 +715,7 @@ header{
 
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 
 	z-index: 1;
@@ -725,9 +725,113 @@ header{
 	margin: 10px 0px;
 }
 
+.main_body_history{
+	display: flex;
+	flex-direction: column;
+	justify-items: flex-start;
+	align-items: center;
+}
 
+.title_text{
+	margin-top: 30px;
+	color: #134C85;
+	font-family: Bahnschrift;
+	font-size: 50px;
+}
 
+.text_container {
+	margin-top: 15px;
+	margin-bottom: 15px;
+    width: 1300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    font-size: 20px;
+    line-height: 1.5;
+    text-indent: 30px;
+    padding: 10px 20px;
+	text-align: justify;
+    font-size: 20px;
+    line-height: 1.5;
+    text-indent: 30px;
+}
 
+.text_block{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	align-self: flex-start;
+}
+.text_image{
+	display: flex;
+	flex-direction: column;
+	justify-items: center;
+
+	align-items: center;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.text_image_container{
+	display: flex;
+	flex-direction: row;
+	justify-items: center;
+	justify-content: space-evenly;
+	align-items: center;
+	margin-top: 10px;
+}
+.bold{
+	font-weight: bold;
+}
+.text_image_title{
+	margin-top: 5px;
+	font-family: Bahnschrift;
+    font-size: 17px;
+    color: rgb(19, 76, 133);
+    font-style: italic;
+    transition: 0.3s;
+}
+
+.main_body_official{
+	width: 1000px;
+	display: flex;
+	flex-direction: column;
+	justify-items: flex-start;
+	align-items: center;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.a_block{
+	margin-top: 10px;
+	align-self: flex-start;
+	margin-bottom: 10px;
+	margin-left: 20px;
+}	
+.a_block:hover{
+	color:  rgb(15, 60, 104);
+	text-decoration: underline;
+}
+.main_body_partnership{
+	display: flex;
+	flex-direction: column;
+	justify-items: flex-start;
+	align-items: center;
+}
+.text_list{
+	align-self: center;
+	white-space: pre-wrap;
+}
+.text_help{
+	width: 1190px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-left: 70px;
+	font-style: oblique;
+	margin-bottom: 20px;
+}
 /* Нижняя панель */
 
 footer{
@@ -779,8 +883,12 @@ footer{
 
 .h_text{
 	font-family: Bahnschrift;
-	font-size: 22px;
+	font-size: 30px;
+	font-style: oblique;
 	color: rgb(19, 76, 133);
+	margin-top: 10px;
+	margin-bottom: 10px;
+	align-self: center;
 }
 
 .m_text{
