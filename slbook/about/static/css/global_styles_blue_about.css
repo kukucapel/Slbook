@@ -813,6 +813,40 @@ header{
 	color:  rgb(15, 60, 104);
 	text-decoration: underline;
 }
+.a_mail:hover{
+	color: rgb(15, 60, 104);
+	text-decoration: underline;
+}
+
+
+.main_body_structure{
+	display: flex;
+	flex-direction: column;
+	justify-items: flex-start;
+	align-items: center;
+}
+
+.structure_list{
+	margin-top: 10px;
+	margin-bottom: 20px;
+	margin-left: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-items: flex-start;
+	align-items: flex-start;
+	align-self: start;
+
+}
+.h_str{
+	font-family: Bahnschrift;
+	font-size: 30px;
+	text-decoration: underline;
+	font-style: oblique;
+	color: rgb(19, 76, 133);
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
 .main_body_partnership{
 	display: flex;
 	flex-direction: column;

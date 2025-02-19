@@ -79,7 +79,7 @@
                 <div class="menu_options" id="option_0">
                   <div class='menu_option'> <a class="menu_option" href="/about/history">История</a> </div>
                   <div class='menu_option'> <a class="menu_option" href="/about/structure">Структура</a> </div>
-                  <div class='menu_option'> <a class="menu_option" href="/about/documents">Документы</a> </div>
+                  <!--<div class='menu_option'> <a class="menu_option" href="/about/documents">Документы</a> </div> /-->
                   <div class='menu_option'> <a class="menu_option" href="/about/partnership">Партнёрство</a> </div>
                   <div class='menu_option'> <a class="menu_option" href="/about/official">Официальные документы</a> </div>
                   <div class='menu_option'> <a class="menu_option" href="/about/media">Библиотека в СМИ</a> </div>
@@ -123,7 +123,7 @@
   
                 <div class="menu_options" id="option_3">
                     <div class='menu_option'> Афиша </div>
-                    <div class='menu_option'> Новости </div>
+                    <div class='menu_option'> <a class="menu_option" href="/page/1">Новости</a> </div>
                     <div class='menu_option'> Выставки </div>
                     <div class='menu_option'> Акции </div>
                     <div class='menu_option'> Конференции, семинары, конкурсы </div>
@@ -297,7 +297,7 @@
                 <div class="menu_options">
                   <div class='menu_option'> <a class="menu_option" href="/about/history">История</a> </div>
                   <div class='menu_option'> <a class="menu_option" href="/about/structure">Структура</a> </div>
-                  <div class='menu_option'> <a class="menu_option" href="/about/documents">Документы</a> </div>
+                  <!--<div class='menu_option'> <a class="menu_option" href="/about/documents">Документы</a> </div>/-->
                   <div class='menu_option'> <a class="menu_option" href="/about/partnership">Партнёрство</a> </div>
                   <div class='menu_option'> <a class="menu_option" href="/about/official">Официальные документы</a> </div>
                   <div class='menu_option'> <a class="menu_option" href="/about/media">Библиотека в СМИ</a> </div>
@@ -347,7 +347,7 @@
 
                 <div class="menu_options">
                     <div class='menu_option'> Афиша </div>
-                    <div class='menu_option'> Новости </div>
+                    <div class='menu_option'> <a class="menu_option" href="/page/1">Новости</a> </div>
                     <div class='menu_option'> Выставки </div>
                     <div class='menu_option'> Акции </div>
                     <div class='menu_option'> Конференции, семинары, конкурсы </div>
@@ -660,8 +660,374 @@
             </div>
           </div>
           {% elif name_part == "structure" %}
-          <div>
-            <p>Structure</p>
+          <div class="main_body_structure">
+            <h1 class="title_text">Структура</h1>
+            <span style="margin-top: 30px;" class="h_text">Администрация</span>
+            <div style="width: auto; padding-right: 50px;" class="text_container paper">
+              
+
+              <div class="structure_list">
+                <span class="h_str">Директор</span>
+                <span class="text_block">Коновалова Мария Павловна</span>
+                <span class="text_block">Тел.: (4842) 22-57-73</span>
+                <span class="text_block">E-mail: <a class="a_mail" href="mailto:slbook@mail.ru">slbook@mail.ru</a></span>
+              </div>
+
+              <div class="structure_list">
+                <span class="h_str">Заместитель директора по административно-хозяйственной работе                </span>
+                <span class="text_block">Пешаханова Татьяна Вячеславовна</span>
+                <span class="text_block">Тел.: (4842) 56-28-51</span>
+                <span class="text_block">E-mail: <a class="a_mail" href="mailto:slbook@mail.ru">slbook@mail.ru</a></span>
+              </div>
+
+              <div class="structure_list">
+                <span class="h_str">Заместитель директора по библиотечной-информационной деятельности                </span>
+                <span class="text_block">Алешечкина Татьяна Евгеньевна</span>
+                <span class="text_block">Тел.: (4842) 56-19-51</span>
+                <span class="text_block">E-mail: <a class="a_mail" href="mailto:slbook@mail.ru">slbook@mail.ru</a></span>
+              </div>
+              
+            </div>
+            <span style="margin-top: 30px;" class="h_text">Бухгалтерия</span>
+            <div style="width: auto; padding-right: 50px;" class="text_container paper">
+              
+              <div class="structure_list">
+                <span class="h_str">Главный бухгалтер                </span>
+                <span class="text_block">Колесникова Нина Николаевна</span>
+                <span class="text_block">Тел.: (4842) 22-58-63</span>
+                <span class="text_block">E-mail: <a class="a_mail" href="mailto:slbook@mail.ru">slbook@mail.ru</a></span>
+              </div>
+
+            </div>
+
+            <span style="margin-top: 30px;" class="h_text">Отдел развития</span>
+
+            <div class="text_container paper" style="padding-right: 30px;">
+              
+              <div class="text_image" style="align-self: center;">
+                <div class="text_image_container">
+                  <img class="paper" style="max-width: 800px;" src="{% static "img/Structure/s1.jpg" %}">
+                </div>
+              </div>
+
+              <div class="structure_list" style="align-items: center; align-self: center;">
+                
+                <span class="text_block">Заведующий отделом - Аскерова Сабина Сулеймановна                </span>
+                <span class="text_block">Контактный телефон: (4842) 22-57-13                </span>
+                <span class="text_block">E-mail: <a class="a_mail" href="mailto:org-metodic@mail.ru">org-metodic@mail.ru</a>                </span>
+              </div>
+
+              <span class="text_help" style="margin-bottom: 0px;"><h4>«Значительную роль в повышении квалификации библиотечных работников на местном, региональном, национальном  уровнях играют специальные  библиотеки для слепых…»</h4></span>
+              <span class="text_help" style="width: auto; align-self: flex-end; margin-bottom: 40px; font-style: bold;"><h4>А.Е. Шапошников</h4></span>
+
+              <span class="text_block" style="margin-bottom: 50px;">Отдел является координатором деятельности структурных подразделений специальной библиотеки; собирает, обобщает и анализирует статистические данные, дает рекомендации по развитию библиотек, проводит консультации и стажировки специалистов, занимается научной разработкой проблем, связанных со спецификой обслуживания читателей-инвалидов.</span>
+              <span class="h_str" style="color: black; font-size: 20px; align-self: flex-start; margin-left: 70px;"><h4>Основные задачи отдела:</h4>              </span>
+              <div class="text_help" style="margin-bottom: 50px;">
+                <span class="text_block">• обеспечение единого организационно-методического руководства структурными подразделениями библиотеки, муниципальными библиотеками области, обслуживающими инвалидов, МО ВОС и оказание им практической помощи по совершенствованию работы;</span> 
+                <span class="text_block">• выявление и оценка инноваций в библиотечном деле, внедрение новых форм и методов в практику работы специальной библиотеки;</span>
+                <span class="text_block">• сбор, обобщение и анализ статистических данных, научная разработка проблем, связанных со спецификой обслуживания инвалидов;</span>
+                <span class="text_block">• оказание консультационной и практической помощи в вопросах совершенствования деятельности специальных библиотек;</span>
+                <span class="text_block">• разработка документов, методических пособий и материалов в помощь работе библиотек, обслуживающих инвалидов;</span>
+                <span class="text_block">• организация и проведение мероприятий по повышению квалификации работников специальных библиотек;</span>
+                <span class="text_block">• участие в подготовке региональных, федеральных, международных мероприятий (научно-практических конференций, семинаров, круглых столов, совещаний), решающих проблемы библиотечно-библиографического обслуживания незрячих.                </span>
+              </div>
+
+              <span class="text_block" style="margin-bottom: 40px;">Фонд отдела выделен в системе фондов Областной специальной библиотеки для слепых им Н. Островского с целью рационального и эффективного использования его работниками специальных библиотек, специалистами, занимающимися проблемами организации библиотечного обслуживания инвалидов.</span>
+              
+              <span class="h_str" style="color: black; font-size: 20px; align-self: flex-start; margin-left: 70px;"><h4>Фонд отдела составляют:</h4></span>
+              
+              <div class="text_help" style="margin-bottom: 40px;">
+                <span class="text_block">• энциклопедические и справочные издания по библиотековедению;</span> 
+                <span class="text_block">• документы и материалы, регламентирующие деятельность библиотек;</span>
+                <span class="text_block">• специальные периодические издания;</span>
+                <span class="text_block">• методические и библиографические пособия;</span>
+                <span class="text_block">• прочие материалы.</span>
+              </div>
+
+              <span class="h_str" style="color: black; font-size: 20px; align-self: flex-start; text-decoration: none;"><h4>Картотека методических материалов.              </h4></span>
+
+              <span class="text_block">Систематическая картотека статей предназначена для библиотекарей; специалистов работающих с инвалидами; педагогов, тифлопедагогов,  культмассовых работников и других специалистов, работающих с инвалидами, содержит оперативную информацию из периодических изданий и сборников.</span>
+              <span class="text_block">Картотека состоит из специальных рубрик, освещающие различные вопросы библиотечной деятельности:«Библиотечное дело. Библиотековедение», «Методические разработки Калужской областной специальной библиотеки», «Социальная реабилитация. Социальная защита».</span>
+            </div>
+
+
+            <span style="margin-top: 30px;" class="h_text">Отдел формирования фондов и каталогов            </span>
+
+            <div class="text_container paper" style="padding-right: 30px;">
+              
+              <div class="text_image" style="align-self: center;">
+                <div class="text_image_container">
+                  <img class="paper" style="max-width: 800px;" src="{% static "img/Structure/s2.jpg" %}">
+                </div>
+              </div>
+
+              <div class="structure_list" style="align-items: center; align-self: center;">
+                
+                <span class="text_block">Заведующий отделом -  Сафонова Мария Владимировна                </span>
+                <span class="text_block">Контактный телефон: (4842) 56-19-51             </span>
+                
+              </div>
+
+              <span class="text_help" style="margin-bottom: 0px;"><h4> «Комплектование библиотечного фонда конкретными  изданиями и определение носителя информации должны осуществляться на основании учета спроса и предпочтений»</h4></span>
+              <span class="text_help" style="width: auto; align-self: flex-end; margin-bottom: 40px; font-style: bold;"><h4>Г.П. Диянская              </h4></span>
+
+              <span class="text_block" style="margin-bottom: 50px;">Отдел комплектования и обработки обеспечивает целенаправленное формирование универсального фонда Калужской областной специальной библиотеки для слепых им. Н. Островского документами, которые соответствуют профилю библиотеки как на обычных, так и на специальных носителях информации.</span>
+              <span class="h_str" style="color: black; font-size: 20px; align-self: flex-start; margin-left: 70px;"><h4>Основные направления деятельности отдела:</h4>              </span>
+              <div class="text_help" style="margin-bottom: 50px;">
+                <span class="text_block">• обеспечение целенаправленного формирования универсального фонда документами, которые соответствуют профилю библиотеки, как на обычных, так и на специальных носителях информации;</span> 
+                <span class="text_block">• изучение читательских запросов пользователей с целью удовлетворения их общеобразовательных, профессиональных и культурных интересов;</span>
+                <span class="text_block">• распределение новых поступлений между структурными подразделениями библиотеки;</span>
+                <span class="text_block">• оформление ежегодной подписки на периодическую печать. Работа с регистрационной картотекой периодических изданий, анализ поступления периодики;</span>
+                <span class="text_block">• осуществление работы с 10 специализированными издательствами и организациями;</span>
+                <span class="text_block">• ведение каталогов;</span>
+                <span class="text_block">• автоматизация учета поступлений; </span>
+                <span class="text_block">• исключение из учетных документов отобранных к списанию изданий.                </span>
+              </div>
+
+              <span class="text_block">Фонд библиотеки составляет: книги плоскопчатного шрифта (ППШ) – 34 %; книрельефно-точечного шрифта (РТШ) – 15 %; «говорящие» книги – 51 %. Создается фонд лазерных дисков (свыше 10 тысяч экземпляров), видеотека, медиатека. Отдел проводит подписку на периодические издания. Более 200 названий газет и журналов представлены вниманию свыше 3000 читателей-инвалидов, руководителей и специалистов социальной сферы, из них 30 названий газет и журналов социальной направленности.</span>
+
+            </div>
+
+
+            <span style="margin-top: 30px;" class="h_text">Отдел обслуживания            </span>
+
+            <div class="text_container paper" style="padding-right: 30px;">
+              
+              <div class="text_image" style="align-self: center;">
+                <div class="text_image_container">
+                  <img class="paper" style="max-width: 800px;" src="{% static "img/Structure/s3.jpg" %}">
+                </div>
+              </div>
+
+              <div class="structure_list" style="align-items: center; align-self: center;">
+                
+                <span class="text_block">Заведующая отделом  - Архарова Ольга Ивановна                </span>
+                <span class="text_block">Контактный телефон:  (4842) 57-55-39      </span>
+                
+              </div>
+              
+              <span class="text_block">Отдел обслуживания  осуществляет информационно-библиотечное обслуживание инвалидов по зрению всех возрастных групп, членов их семей, других категорий инвалидов, заболевание которых препятствует пользованию общедоступными библиотеками и чтению печатных документов, а также физических и юридических лиц, профессионально занимающихся проблемами инвалидов и инвалидности.</span>
+
+
+              <span class="text_block" >Работа отдела обслуживания охватывает все аспекты деятельности специальной библиотеки для слепых и состоит в выполнении основных функций: социокультурной, реабилитационной, просветительской и справочно-информационной.</span>
+              <span class="text_block" ">Абонемент осуществляет выдачу книг плоско-печатного шрифта, изданий укрупненного шрифта (для слабовидящих), «говорящих» книг на компакт-кассетах.</span>
+
+              <div class="text_image" style="align-self: center; margin-bottom: 40px;">
+                <div class="text_image_container">
+                  <img class="paper" style="max-width: 800px;" src="{% static "img/Structure/s4.jpg" %}">
+                </div>
+              </div>
+
+              <span class="h_str" style="color: black; font-size: 20px; align-self: flex-start; margin-left: 70px;"><h4>Основные задачи работы отдела обслуживания:              </h4>              </span>
+              <div class="text_help" style="margin-bottom: 50px;">
+                <span class="text_block">• приобщать к чтению и развивать творческие возможности молодых читателей посредством участия в различных интерактивных мероприятиях, способствовать активизации их жизненной позиции;</span> 
+                <span class="text_block">• совершенствовать работу по социокультурной реабилитации читателей с различными физическими ограничениями посредством развития досуговых любительских объединений (клубов, секций и т.д.) с целью их адаптации в обществе;</span>
+                <span class="text_block">• организовывать комплексное объективное освещение исторических событий, используя воспоминания очевидцев, военно-исторические мемуары, архивные документы, выступления историков;</span>
+                <span class="text_block">• осуществлять групповое и индивидуальное информирование раз-личных групп читателей, выявлять новые объекты и темы информирования;</span>
+                <span class="text_block">• совершенствовать работу Центра чтения библиотеки с целью дальнейшего продвижения книги и чтения с использованием новых информационных технологий;</span>
+                <span class="text_block">• осуществлять работу по правовому просвещению и повышению правовой культуры инвалидов различных категорий посредством развития Центра правовой информации при библиотеке;</span>
+                <span class="text_block">• совершенствовать совместную деятельность с социальными факультетами калужских вузов с целью приобщения студентов к научной и практической работе по социокультурной реабилитации инвалидов всех категорий;</span>
+                <span class="text_block">• содействовать участию в различных творческих конкурсах людей с ограниченными физическими возможностями – пользователей библиотеки;</span>
+                <span class="text_block">• приобщать к сотрудничеству с библиотекой научную и культурную общественность города, членов разнообразных творческих союзов: журналистов, писателей, архитекторов, краеведов, научных сотрудников и др.</span>
+                <span class="text_block">• поддерживать тесную связь с общественными организациями и объединениями инвалидов: с местными организациями ВОС, ВОИ, областным отделением Комитета Красного Креста; учреждениями культуры города и области, территориальными центрами социальной защиты, центрами реабилитации людей с физическими ограничениями;</span>
+                <span class="text_block">• привлекать городские и областные СМИ для освещения и рекламы деятельности отдела и библиотеки.</span>
+              </div>
+
+              
+            </div>
+
+
+
+            <span style="margin-top: 30px;" class="h_text">Отдел тифлоинформационных технологий           </span>
+
+            <div class="text_container paper" style="padding-right: 30px;">
+              
+              <div class="text_image" style="align-self: center;">
+                <div class="text_image_container">
+                  <img class="paper" style="max-width: 800px;" src="{% static "img/Structure/s6.jpg" %}">
+                </div>
+              </div>
+
+              <div class="structure_list" style="align-items: center; align-self: center;">
+                
+                <span class="text_block">Заведующий отделом - Олимпиева Юлия Александровна                </span>
+                <span class="text_block">Контактный телефон: (4842) 22-57-66                </span>
+                <span class="text_block">E–mail: <a class="a_mail" href="mailto:tiflotech@mail.ru">tiflotech@mail.ru</a> </span>
+                
+              </div>
+
+              <span class="text_help" style="margin-bottom: 0px;"><h4>  «Брайлевские компьютерные технологии области научно – технического и литературного творчества  делают меня зрячеслышащим, снимая все связанны со слепоглухотой ограничения»</h4></span>
+              <span class="text_help" style="width: auto; align-self: flex-end; margin-bottom: 40px; font-style: bold;"><h4>       слепоглухой  ученый,                доктор  психологических наук А.В. Суворов           </h4></span>
+
+              <span class="text_block" ">Отдел тифлоинформационных технологий предоставляет читателям беспрепятственный доступ к информационным ресурсам библиотеки с помощью тифлотехнических средств и компьютерных технологий. А так же справочную литературу по дефектологии, реабилитации, учебного характера, CD-диски, флешкарты.</span>
+
+              <div class="text_image" style="align-self: center;">
+                <div class="text_image_container">
+                  <img class="paper" style="max-width: 800px;" src="{% static "img/Structure/s7.jpg" %}">
+                </div>
+              </div>
+
+              <span class="h_str" style="color: black; font-size: 20px; align-self: flex-start; margin-left: 70px;"><h4>Основные задачи и направления отдела является:              </h4>              </span>
+              <div class="text_help" style="margin-bottom: 20px;">
+                <span class="text_block">• расширение и обеспечение свободного доступа к информации людям с ограниченными возможностями;                </span>
+                <span class="text_block">• удовлетворение читательского спроса в различных областях знаний, комплектование фонда литературы в специальных форматах (CD-дисках и флешкартах);                </span>
+                <span class="text_block">• формирование плоскопечатного фонда литературы по тифлологии;                </span>
+                <span class="text_block">• обеспечение автоматизированного рабочего места;                </span>
+                <span class="text_block">• обеспечение оперативного доступа к информационным ресурсам Интернет;                </span>
+                <span class="text_block">• оказание консультативной и методической помощи ЛОВ;                </span>
+                <span class="text_block">• предоставление информации руководителям и специалистам по вопросам коррекционно - педагогической и реабилитационной работы;                                         </span>
+                <span class="text_block">• правовое просвещение и повышение правовой культуры;                </span>
+                <span class="text_block">• привлечение в работу клубов по интересам;                </span>
+                <span class="text_block">• участие в конференциях и семинарах – практикумах.                </span>
+              </div>
+
+              <div class="text_image" style="align-self: center; margin-bottom: 30px;">
+                <div class="text_image_container">
+                  <img class="paper" style="height: 330px; margin-right: 20px;" src="{% static "img/Structure/s8.jpg" %}">
+                  <img class="paper" style="max-width: 800px;" src="{% static "img/Structure/s9.jpg" %}">
+                </div>
+              </div>
+
+
+              <span class="h_str" style="color: black; font-size: 20px; align-self: flex-start; margin-left: 70px;"><h4>Отдел предоставляет следующие услуги:              </h4>              </span>
+              <div class="text_help" style="margin-bottom: 50px;">
+                <span class="text_block">• обучение инвалидов всех категорий  навыкам компьютерной грамотности;</span>
+                <span class="text_block">• предоставление в пользование на определенный срок издания на  CD – дисках и флешкартах;</span>
+                <span class="text_block">• дистанционное консультирование людей с ограниченными возможностями  ПК по телефону, электронной почте, skype;</span>
+                <span class="text_block">• индивидуальное консультирование  пользователей;</span>
+                <span class="text_block">• получение информации в сети Интернет;</span>
+                <span class="text_block">• ксерокопирование, сканирование и распечатка документов шрифтам Л. Брайля;</span>
+                <span class="text_block">• обучение незрячих чтению и письму по системе Л. Брайля;</span>
+                <span class="text_block">• чтение плоскопечатных изданий с помощью читающей машины Sara</span>
+                <span class="text_block">• информирование по социально - правовым вопросам (в СПС «КонсультантПлюс»);</span>
+                <span class="text_block">• предоставление  информации руководителям и специалистам, работающим с ЛОВ.</span>
+              </div>
+
+              
+
+              <span class="text_block">В связи с поступлением новой техники, которая позволила проводить работу не только с инвалидами по зрению, но и с инвалидами других категорий. На данный момент специалисты библиотеки обучают 50 человек и ежедневно оказывают консультативную помощь всем желающим. Мы предоставляет возможность овладения компьютерной грамотностью инвалидам всех категорий. С этой целью были разработаны курсы, позволяющие обучать людей с любыми патологиями и достигать в этом хороших результатов.              </span>
+              <span class="text_block" style="margin-bottom: 50px;">Специалисты отдела в области информационных технологий, каждый день проводят учебные занятия с использованием компьютерной техники и адаптивных тифлотехнических средств. Кроме того, они ведут постоянное дистанционное консультирование с целью получения начальных навыков использования незрячих пользователей. Дистанционное консультирование осуществляется как по телефону, так и с помощью skype.</span>
+
+              <span class="h_str" style="color: black; font-size: 20px; align-self: flex-start; margin-left: 70px;"><h4>Пользователями отдела тифлоинформационных технологий могут стать:              </h4>              </span>
+              <div class="text_help" style="margin-bottom: 50px;">
+                <span class="text_block">• читатели – инвалиды по зрению;</span>
+                <span class="text_block">• инвалиды всех категорий;</span>
+                <span class="text_block">• студенты и преподаватели социальных факультетов ВУЗов;</span>
+                <span class="text_block">• учащиеся школ – интернатов;</span>
+                <span class="text_block">• специалисты социальных учреждений и реабилитационных центров;</span>
+                <span class="text_block">• родители детей – инвалидов;</span>
+                <span class="text_block">• члены МО ВОС;</span>
+                <span class="text_block">• библиотекари ЦБС области, обслуживающие людей с ограниченными возможностями;</span>
+                <span class="text_block">• общественные организации.</span>
+              </div>
+
+            </div>
+
+
+            <span style="margin-top: 30px;" class="h_text">Читальный зал            </span>
+
+            <div class="text_container paper" style="padding-right: 30px;">
+              
+
+              <span class="h_str" style="color: black; font-size: 20px; align-self: flex-start; margin-left: 70px; margin-top: 20px;"><h4>Информационные ресурсы:              </h4>              </span>
+              <div class="text_help" style="margin-bottom: 50px;">
+                <span class="text_block">• справочная литература (энциклопедии, словари, справочники);                </span>
+                <span class="text_block">• собрания сочинений русских и зарубежных классиков;                </span>
+                <span class="text_block">• редкие книги;                </span>
+                <span class="text_block">• отраслевые издания;                </span>
+                <span class="text_block">• около 200 наименований журналов и газет.                </span>
+              </div>
+
+              <div class="text_image" style="align-self: center; margin-bottom: 30px;">
+                <div class="text_image_container">
+                  <img class="paper" style="height: 330px; margin-right: 20px;" src="{% static "img/Structure/s10.jpg" %}">
+                  <img class="paper" style="height: 330px;" src="{% static "img/Structure/s11.jpg" %}">
+                </div>
+              </div>
+
+              <span class="h_str" style="color: black; font-size: 20px; align-self: flex-start; margin-left: 70px;"><h4>Основные направления деятельности:              </h4>              </span>
+              <div class="text_help" style="margin-bottom: 50px;">
+                <span class="text_block">• Дифференцированное обслуживание читателей, испытывающих трудности при чтении плоскопечатных текстов</span>
+                <span class="text_block">• Организация культурно-массовой работы</span>
+              </div>
+
+              
+            </div>
+
+            <span style="margin-top: 30px;" class="h_text">Отдел издательских и медиатехнологий            </span>
+
+            <div class="text_container paper" style="padding-right: 30px;">
+              
+              <div class="text_image" style="align-self: center;">
+                <div class="text_image_container">
+                  <img class="paper" style="max-width: 800px;" src="{% static "img/Structure/s12.jpg" %}">
+                </div>
+              </div>
+
+              <div class="structure_list" style="align-items: center; align-self: center;">
+                
+                <span class="text_block">Заведующий отделом - Николахина Екатерина Валентиновна               </span>
+                <span class="text_block">Контактный телефон: (4842) 56-33-01              </span>
+                <span class="text_block">E–mail: <a class="a_mail" href="mailto:izdatelsl@mail.ru">izdatelsl@mail.ru</a></span>
+                
+              </div>
+
+              <span class="text_block" ">Издательский отдел осуществляет издание книг по краеведению, правового характера, а также произведений читателей библиотеки.</span>
+
+              <span class="h_str" style="color: black; font-size: 20px; align-self: flex-start; margin-left: 70px;"><h4>Основные задачи отдела:</h4></span>
+              <div class="text_help" style="margin-bottom: 20px;">
+                <span class="text_block">• редакционно-издательская деятельность;</span>
+                <span class="text_block">• выпуск издательской продукции в соответствии с годовыми планами и  направлениями работы;</span>
+                <span class="text_block">• обобщение, внедрение и распространение опыта работы издательских отделов специальных библиотек по изданию книг для инвалидов.</span>
+
+              </div>
+
+              <span class="h_str" style="color: black; font-size: 20px; align-self: flex-start; margin-left: 70px;"><h4>Основные задачи отдела:</h4></span>
+              <div class="text_help" style="margin-bottom: 20px;">
+                <span class="text_block">• книги рельефно-точечного шрифта;</span>
+                <span class="text_block">• книги укрупнённого шрифта;</span>
+                <span class="text_block">• «говорящие» книги;</span>
+                <span class="text_block">• методические пособия по работе с людьми с ограниченными возможностями;</span>
+                <span class="text_block">• рельефно-графические пособия;</span>
+                <span class="text_block">• рекомендательные списки литературы и буклеты.</span>
+
+
+              </div>
+
+              <span class="h_str" style="color: black; font-size: 20px; align-self: flex-start; margin-left: 70px;"><h4>Основные направления:</h4></span>
+              <div class="text_help" style="margin-bottom: 20px;">
+                <span class="text_block">• Книги по истории родного края</span>
+                <span class="text_block">• Знаменитые писатели и Калужский край</span>
+                <span class="text_block">• Выдающиеся земляки</span>
+                <span class="text_block">• Книги военно-патриотической тематики</span>
+                <span class="text_block">• Биобиблиографические указатели о жизни  и творчестве наших земляков. Тифлокраеведение</span>
+                <span class="text_block">• Книги к юбилейным датам</span>
+                <span class="text_block">• Книги для детей</span>
+                <span class="text_block">• Документы правовой тематики</span>
+                <span class="text_block">• Компьютерные технологии для людей с ограниченными возможностями</span>
+                <span class="text_block">• Православное направление</span>
+                <span class="text_block">• Рельефно-графические пособия</span>
+                <span class="text_block">• Пособия по работе с людьми с ограниченными возможностями</span>
+                <span class="text_block">• Методические материалы к конференциям</span>
+                <span class="text_block">• Методические пособия в рамках Центра толерантности</span>
+                <span class="text_block">• Методические материалы. Автор М.П. Коновалова</span>
+                <span class="text_block">• Календари знаменательных и памятных дат</span>
+                <span class="text_block">• Рекомендательные списки по темам</span>
+                <span class="text_block">• Методические пособия по экологическому просвещению</span>
+                <span class="text_block">• Буклеты</span>
+                <span class="text_block">• Репродуцирование изданий музеев</span>
+                <span class="text_block">• Областные творческие конкурсы</span>
+                <span class="text_block">• Творчество читателей-людей с ограниченными возможностями</span>
+
+
+              </div>
+
+             
+
+            </div>
+
+
+
           </div>
           {% elif name_part == "documents" %}
           <div>
