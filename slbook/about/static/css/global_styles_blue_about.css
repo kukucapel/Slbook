@@ -794,6 +794,14 @@ header{
     transition: 0.3s;
 }
 
+.documents_block{
+	margin-bottom: 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	align-self: flex-start;
+}
+
 .main_body_official{
 	width: 1000px;
 	display: flex;
