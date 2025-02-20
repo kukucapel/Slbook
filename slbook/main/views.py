@@ -15,9 +15,7 @@ def index(request):
     article_preview = []
     count_articles = 0
     for i in reversed(articles_all):
-        print(i.title)
         if i.date_new <= current_date and count_articles != 3:
-            print(i.title)
             article_preview.append(i)
             count_articles += 1
     

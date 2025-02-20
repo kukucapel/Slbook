@@ -725,12 +725,7 @@ header{
 	margin: 10px 0px;
 }
 
-.main_body_history{
-	display: flex;
-	flex-direction: column;
-	justify-items: flex-start;
-	align-items: center;
-}
+
 
 .title_text{
 	margin-top: 30px;
@@ -794,15 +789,7 @@ header{
     transition: 0.3s;
 }
 
-.main_body_official{
-	width: 1000px;
-	display: flex;
-	flex-direction: column;
-	justify-items: flex-start;
-	align-items: center;
-	margin-top: 15px;
-	margin-bottom: 15px;
-}
+
 .a_block{
 	margin-top: 10px;
 	align-self: flex-start;
@@ -819,24 +806,10 @@ header{
 }
 
 
-.main_body_structure{
-	display: flex;
-	flex-direction: column;
-	justify-items: flex-start;
-	align-items: center;
-}
 
-.structure_list{
-	margin-top: 10px;
-	margin-bottom: 20px;
-	margin-left: 5px;
-	display: flex;
-	flex-direction: column;
-	justify-items: flex-start;
-	align-items: flex-start;
-	align-self: start;
 
-}
+
+
 .h_str{
 	font-family: Bahnschrift;
 	font-size: 30px;
@@ -847,18 +820,7 @@ header{
 	margin-bottom: 10px;
 }
 
-.main_body_partnership{
-	display: flex;
-	flex-direction: column;
-	justify-items: flex-start;
-	align-items: center;
-}
-.main_body_media{
-	display: flex;
-	flex-direction: column;	
-	justify-items: flex-start;
-	align-items: center;
-}
+
 .text_container_media {
 	margin-top: 15px;
 	margin-bottom: 15px;

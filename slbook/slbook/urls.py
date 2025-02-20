@@ -15,5 +15,6 @@ urlpatterns = [
     path('page/<int:number_page>', news_views.main),
     path('about/<str:name_part>', about_views.history),
     path('readers/<str:name_part>', readers_views.main),
+    path('readers/services/<int:number_part>', readers_views.services)
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
