@@ -1,6 +1,22 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator 
 
+# Здесь описаны таблицы для динамического отображения статики сайта 
+# 
+# Вся динамика состоит из белых блоков и элементов внутри
+# И блок и элемент имеет приоритет относительно других блоков и элементов соответсвенно 
+# 
+# На каждую статическую страницу имеется минимум ДВЕ обязательные таблицы
+#   1) Таблица блоков (*Block)
+#   2) Таблица елементов (*Element)
+#  
+
+
+
+
+# Сайт с историей библиотеки содержит 3 таблицы - 2 обязательные и 1 вспомогательная с картинками
+
+
 class HistoryBlock(models.Model):
     id_block = models.AutoField(primary_key=True)
     priority = models.IntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(100)])
@@ -33,7 +49,9 @@ class HistoryImage(models.Model):
 
 
 
-
+# Сайт со структурой библиотеки содержит 4 таблицы - 2 обязательные и 2 вспомогательные:
+#   1) Вспомогательная таблица с картинками
+#   2) Вспомогательная таблица со списком
 
 class StructureBlock(models.Model):
 
@@ -78,3 +96,39 @@ class StructureImage(models.Model):
 class StructureList(models.Model):
     id_element = models.ForeignKey(StructureElement, to_field='id_element', on_delete=models.CASCADE)
     list_element = models.CharField(max_length=400, default=None, null=True, blank=True)
+
+
+
+
+class PartnershipBlock(models.Model):
+    id_block = models.AutoField(primary_key=True)
+    priority = models.IntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(100)])
+
+    def __str__(self):
+        return str(self.id_block)
+
+class PartnershipElement(models.Model):
+    id_element = models.AutoField(primary_key=True)
+    id_block = models.ForeignKey(PartnershipBlock, to_field='id_block', on_delete=models.CASCADE)
+    priority = models.IntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(100)])
+    
+    title = models.CharField(max_length=200, default=None, null=True, blank=True)
+
+    text = models.TextField(max_length=65535, default=None, null=True, blank=True)
+
+    img_title = models.CharField(max_length=200, default=None, null=True, blank=True)
+
+    def __str__(self):
+        return str(self.id_element)
+
+class PartnershipImage(models.Model):
+    id_element = models.ForeignKey(PartnershipElement, to_field='id_element', on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='images/structure/partnership')
+ 
+class PartnershipList(models.Model):
+    id_element = models.ForeignKey(PartnershipElement, to_field='id_element', on_delete=models.CASCADE)
+    list_element = models.CharField(max_length=400, default=None, null=True, blank=True)
+
+class PartnershipAuthor(models.Model):
+    id_element = models.ForeignKey(PartnershipElement, to_field='id_element', on_delete=models.CASCADE)
+    author_paragraph = models.CharField(max_length=400, default=None, null=True, blank=True)

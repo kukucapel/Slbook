@@ -409,7 +409,7 @@
                       <div class="text_image">
                         <div class="text_image_container">
                           {% for img in el.el_list %}
-                            <img class="paper one_image" src="/media/{{img.image}}" %}">
+                            <img class="paper one_image_history" src="/media/{{img.image}}" %}">
                           {% endfor %}
                         </div>
                         {% if el.el_value != None %}
@@ -472,7 +472,7 @@
                           <div class="text_image">
                             <div class="text_image_container">
                               {% for img in el.el_list %}
-                                <img class="paper one_image_history" src="/media/{{img.image}}" %}">
+                                <img class="paper one_image_structure" src="/media/{{img.image}}" %}">
                               {% endfor %}
                             </div>
                             {% if el.el_value != None %}
@@ -552,6 +552,44 @@
           {% elif name_part == "partnership" %}
           <div class="main_body_partnership">
             <h1 class="title_text">Наши партёры</h1>
+            {% for elem in element %}
+              {% if elem %}
+                <div class="paper text_container">
+                  {% for el in elem %}
+                    {% if el.el_type == "title" %}
+                      <span class="h_text">{{el.el_value}}</span>
+                    {% elif el.el_type == "text" %}
+                      <span class="text_block">{{el.el_value}}</span>
+                    {% elif el.el_type == "img" %}
+                      <div class="text_image">
+                        <div class="text_image_container">
+                          {% for img in el.el_list %}
+                            <img class="paper one_image_history" src="/media/{{img.image}}" %}">
+                          {% endfor %}
+                        </div>
+                        {% if el.el_value != None %}
+                          <div class="text_image_title">
+                            <span>{{el.el_value}}</span>
+                          </div>
+                        {% endif %}
+                      </div>
+                    {% elif el.el_type == "list" %}
+                      <div class="text_help" style="margin-bottom: 50px;">
+                        {% for list in el.el_list %}
+                          <span class="text_block"> {{list.list_element}}</span>  
+                        {% endfor %}
+                      </div>
+                    {% elif el.el_type == "author" %}
+                      <div class="text_block partnership_author">
+                        {% for list in el.el_list %}
+                          <span>{{list.author_paragraph}}</span>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              {% endif %}
+            {% endfor %}
             <div class="text_container paper">
               <span class="h_text">Библиотека и волонтеры</span>
               <span class="text_block">Калужская областная специальная библиотека для слепых является учебно-методическим центром для высших учебных заведений социальной направленности. Уже более 10 лет в библиотеке проходят практику студенты социальных факультетов ВУЗов города Калуги. Они стали первыми волонтёрами для инвалидов, читающих в библиотеке. Ежегодно сотрудники библиотеки организуют для волонтёров учебные семинары, на которых обсуждаются вопросы организации помощи инвалидам. Студенты ВУЗов оказывают помощь в проведении занятий для инвалидов по овладению компьютерной грамотностью, помогают в организации мероприятий ко Дню слепого человека,  декады инвалидов.          </span>

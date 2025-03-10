@@ -41,3 +41,28 @@ class StructureElementAdmin(admin.ModelAdmin):
 @admin.register(StructureBlock)
 class StructureBlockAdmin(admin.ModelAdmin):
     list_display = ('id_block', 'priority', 'type_block')
+
+
+
+#admin block partnership
+
+class PartnershipImageInline(admin.TabularInline):
+    fk_name = 'id_element'
+    model = PartnershipImage
+
+class PartnershipListInline(admin.TabularInline):
+    fk_name = 'id_element'
+    model = PartnershipList
+
+class PartnershipAuthorInline(admin.TabularInline):
+    fk_name = 'id_element'
+    model = PartnershipAuthor
+
+@admin.register(PartnershipElement)
+class PartnershipElementAdmin(admin.ModelAdmin):
+    inlines = [PartnershipListInline, PartnershipAuthorInline, PartnershipImageInline,]
+    list_display = ['id_block', 'priority', 'title', 'text', 'img_title']
+
+@admin.register(PartnershipBlock)
+class PartnershipBlockAdmin(admin.ModelAdmin):
+    list_display = ('id_block', 'priority')

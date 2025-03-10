@@ -5,24 +5,13 @@ from django.utils import timezone
 from .models import *
 from abc import ABC
 
-# идея заключается в создании массива объектов класса
-# нужного раздела и последующей отправке оного в шаблон
+# Идея заключается в создании массива объектов класса
+# Нужного раздела и последующей отправке оного в шаблон
 #
-# изначально класс имеет три поля:
+# Изначально класс имеет три поля:
 #                     1) Поле с типом элемента (el_type)
 #                     2) Поле с единичным значением (el_value)
 #                     3) Поле со списком (el_list)
-# 
-#
-#
-#
-#
-# 
-# 
-# 
-# 
-# 
-# 
 # 
 
 
@@ -39,8 +28,11 @@ class ElementClass(ABC): # основные поля
         if self.el_list != None:
             print("List: ", self.el_list)
     
-    def send_all_field_to_template(self):
-        pass
+    def check_any_children(self, elementParent, elentChildren):
+        if elentChildren.objects.filter(id_element = elementParent.id_element):
+            return True
+        else:
+            return False
 
 class ElementHistoryClass(ElementClass): # для истории
  
@@ -59,7 +51,7 @@ class ElementHistoryClass(ElementClass): # для истории
                 self.el_value = elementHistory.title_list
             self.el_list = elementHistory.text_list
         
-        elif elementHistory.title_img != None or self.check_img(elementHistory):
+        elif elementHistory.title_img != None or self.check_any_children(elementHistory, HistoryImage):
             self.el_type = "img"
             if elementHistory.title_img != None:
                 self.el_value = elementHistory.title_img
@@ -70,14 +62,7 @@ class ElementHistoryClass(ElementClass): # для истории
         self.ident_type(elementHistory)
     
 
-
-    def check_img(self, elementHistory):
-        if HistoryImage.objects.filter(id_element = elementHistory.id_element):
-            return True
-        else:
-            return False
-
-class ElementStructureClass(ElementClass):
+class ElementStructureClass(ElementClass): # для структуры
 
     el_type_block = None
 
@@ -94,7 +79,7 @@ class ElementStructureClass(ElementClass):
             self.el_type = 'text'
             self.el_value = elementStructure.text
 
-        elif elementStructure.list_title != None or self.check_list(elementStructure):
+        elif elementStructure.list_title != None or self.check_any_children(elementStructure, StructureList):
             self.el_type = 'list'
             if elementStructure.list_title != None:
                 self.el_value = elementStructure.list_title
@@ -123,27 +108,45 @@ class ElementStructureClass(ElementClass):
                 self.el_value = elementStructure.img_title
             self.el_list = StructureImage.objects.filter(id_element = elementStructure.id_element)
 
-    def ident_type_block(self, block):
-        self.el_type_block = block
-
-    def check_list(self, elementStructure):
-        if StructureList.objects.filter(id_element = elementStructure.id_element):
-            return True
-        else:
-            return False
     
     def __init__(self, elementStructure):
         self.ident_type(elementStructure)
-        #self.ident_type_block(block)
+        
 
     def view_all_field(self):
         print("Type: ", self.el_type)
-        #print("Type block: ", self.el_type_block)
+        
         if self.el_value != None:
             print("Value: ", self.el_value)
         if self.el_list != None:
             print("List: ", self.el_list)
+
+class ElementPartnershipClass(ElementClass):
+
+    def ident_type(self, elementPartnership):
+        if elementPartnership.title != None:
+            self.el_type = "title"
+            self.el_value = elementPartnership.title
+        
+        elif elementPartnership.text != '':
+            self.el_type = "text"
+            self.el_value = elementPartnership.text 
+        elif self.check_any_children(elementPartnership, PartnershipList):
+            self.el_type = "list"
+            self.el_list = PartnershipList.objects.filter(id_element = elementPartnership.id_element)
+        elif self.check_any_children(elementPartnership, PartnershipAuthor):
+            self.el_type = "author"
+            self.el_list = PartnershipAuthor.objects.filter(id_element = elementPartnership.id_element)
+        else:
+            self.el_type = "img"
+            if elementPartnership.img_title != None:
+                self.el_value = elementPartnership.img_title
+            self.el_list = PartnershipImage.objects.filter(id_element = elementPartnership.id_element)
     
+    def __init__(self, elementPartnership):
+        self.ident_type(elementPartnership)
+        
+
 
 
 def history(request, name_part = "history"):
@@ -166,7 +169,15 @@ def history(request, name_part = "history"):
                 temp.append(ElementStructureClass(element))
             elem.append(temp)
             temp = []
-    
+    elif name_part == "partnership":
+        for block in PartnershipBlock.objects.all().order_by('priority'):
+            for element in PartnershipElement.objects.filter(id_block = block.id_block).order_by('priority'):
+                temp.append(ElementPartnershipClass(element))
+            elem.append(temp)
+            temp = []
+    for element in elem:
+        for el in element:
+            el.view_all_field()
     
 
 
