@@ -91,7 +91,7 @@ class StructureElement(models.Model):
 
 class StructureImage(models.Model):
     id_element = models.ForeignKey(StructureElement, to_field='id_element', on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='images/structure/history')
+    image = models.ImageField(upload_to='images/about/structure')
 
 class StructureList(models.Model):
     id_element = models.ForeignKey(StructureElement, to_field='id_element', on_delete=models.CASCADE)
@@ -127,7 +127,7 @@ class PartnershipElement(models.Model):
 
 class PartnershipImage(models.Model):
     id_element = models.ForeignKey(PartnershipElement, to_field='id_element', on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='images/structure/partnership')
+    image = models.ImageField(upload_to='images/about/partnership')
  
 class PartnershipList(models.Model):
     id_element = models.ForeignKey(PartnershipElement, to_field='id_element', on_delete=models.CASCADE)
@@ -136,6 +136,11 @@ class PartnershipList(models.Model):
 class PartnershipAuthor(models.Model):
     id_element = models.ForeignKey(PartnershipElement, to_field='id_element', on_delete=models.CASCADE)
     author_paragraph = models.CharField(max_length=400, default=None, null=True, blank=True)
+
+
+# Сайт с официальными документами состоит из двух таблиц 
+#   1) Таблица с блоками
+#   2) Вспомогательная таблица с файлами
 
 
 class FileBlock(models.Model):
@@ -148,7 +153,20 @@ class FileBlock(models.Model):
 class FileElement(models.Model):
     id_block = models.ForeignKey(FileBlock, to_field='id_block', on_delete=models.CASCADE)
     file_name = models.CharField(max_length=400, default=None, null=True, blank=True)
-    file = models.FileField(upload_to='files/structure/official')
+    file = models.FileField(upload_to='files/about/official')
 
     def __str__(self):
         return str(self.id)
+
+
+
+
+class BiblioMassMedia(models.Model):
+    name_new = models.CharField(max_length=500, default=None, null=True, blank=True)
+    priority = models.IntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(100)])
+
+    image_new = models.ImageField(upload_to='images/about/media', null=True, blank=True)
+    href_new = models.CharField(max_length=500, default=None)
+
+    def __str__(self):
+        return self.name_new

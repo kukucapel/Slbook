@@ -82,3 +82,8 @@ class FileElementInline(admin.TabularInline):
 class FileBlockAdmin(admin.ModelAdmin):
     inlines = [FileElementInline,]
     list_display = ['id_block', 'priority']
+
+
+@admin.register(BiblioMassMedia)
+class BiblioMassMediaAdmin(admin.ModelAdmin):
+    list_display = ['name_new', 'priority', 'image_new', 'href_new']

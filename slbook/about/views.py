@@ -182,13 +182,12 @@ def history(request, name_part = "history"):
     elif name_part == "official":
         for block in FileBlock.objects.all().order_by('priority'):
             elem.append(FileBlockClass(block))
+    elif name_part == "media":
+        elem = BiblioMassMedia.objects.all().order_by('priority')
     
     
     
-    print(elem[0].el_list)
-    for element in elem:
-        for el in element.el_list:
-            print(el.file_name)
+
     
 
 
