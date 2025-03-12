@@ -147,6 +147,10 @@ class ElementPartnershipClass(ElementClass):
         self.ident_type(elementPartnership)
         
 
+class FileBlockClass(ElementClass):
+    
+    def __init__(self, elementFile):
+        self.el_list = FileElement.objects.filter(id_block = elementFile.id_block)
 
 
 def history(request, name_part = "history"):
@@ -175,9 +179,16 @@ def history(request, name_part = "history"):
                 temp.append(ElementPartnershipClass(element))
             elem.append(temp)
             temp = []
+    elif name_part == "official":
+        for block in FileBlock.objects.all().order_by('priority'):
+            elem.append(FileBlockClass(block))
+    
+    
+    
+    print(elem[0].el_list)
     for element in elem:
-        for el in element:
-            el.view_all_field()
+        for el in element.el_list:
+            print(el.file_name)
     
 
 

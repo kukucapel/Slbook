@@ -66,3 +66,19 @@ class PartnershipElementAdmin(admin.ModelAdmin):
 @admin.register(PartnershipBlock)
 class PartnershipBlockAdmin(admin.ModelAdmin):
     list_display = ('id_block', 'priority')
+
+
+
+
+#admin block official documents
+
+
+
+class FileElementInline(admin.TabularInline):
+    fk_name = 'id_block'
+    model = FileElement
+
+@admin.register(FileBlock)
+class FileBlockAdmin(admin.ModelAdmin):
+    inlines = [FileElementInline,]
+    list_display = ['id_block', 'priority']

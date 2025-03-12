@@ -98,6 +98,10 @@ class StructureList(models.Model):
     list_element = models.CharField(max_length=400, default=None, null=True, blank=True)
 
 
+# Сайт с партёрами библиотеки содержит 5 таблиц - 2 обязательные и 3 вспомогательные:
+#   1) Вспомогательная таблица с картинками
+#   2) Вспомогательная таблица со списком
+#   3) Вспомогательная таблица с автором цитаты
 
 
 class PartnershipBlock(models.Model):
@@ -132,3 +136,19 @@ class PartnershipList(models.Model):
 class PartnershipAuthor(models.Model):
     id_element = models.ForeignKey(PartnershipElement, to_field='id_element', on_delete=models.CASCADE)
     author_paragraph = models.CharField(max_length=400, default=None, null=True, blank=True)
+
+
+class FileBlock(models.Model):
+    id_block = models.AutoField(primary_key=True)
+    priority = models.IntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(100)])
+
+    def __str__(self):
+        return str(self.id_block)
+
+class FileElement(models.Model):
+    id_block = models.ForeignKey(FileBlock, to_field='id_block', on_delete=models.CASCADE)
+    file_name = models.CharField(max_length=400, default=None, null=True, blank=True)
+    file = models.FileField(upload_to='files/structure/official')
+
+    def __str__(self):
+        return str(self.id)
