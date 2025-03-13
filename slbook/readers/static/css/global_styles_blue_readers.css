@@ -725,6 +725,41 @@ header{
 	margin: 10px 0px;
 }
 
+.info_container {
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #134C85;
+    font-family: Bahnschrift;
+    white-space: pre-wrap;
+	line-height: 1.5;
+	padding-left: 25px;
+}
+.info_content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-right: 30px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.service_list_block{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.a_info {
+	margin-top: 5px;
+	text-align: left;
+    color: #1861aa;
+    text-decoration: underline;
+}
+.a_info:hover{
+	color:#134C85
+}
+
+
 
 
 .title_text{
@@ -1412,7 +1447,7 @@ footer{
 	.footer_container{		
 		font-size: 10px;
 		height: 40px;
-	 }
+	}
 }
 
 

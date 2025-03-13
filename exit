@@ -1,0 +1,107 @@
+[33mcommit e8431b22160506028dbee6fbed74827a901d0c30[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: kukucapel <loopnow0@gmail.com>
+Date:   Wed Mar 12 11:04:18 2025 +0300
+
+    1_0D All about
+
+[33mcommit b0ccea3c1acf82eb97a6d1c9a67b123354adddcc[m
+Author: kukucapel <loopnow0@gmail.com>
+Date:   Wed Mar 12 09:34:52 2025 +0300
+
+    1_0D History Structure Partnership OfficialDocunents
+
+[33mcommit 31f72f60d46130d06f7c5c4d6cad4c08f6b14c87[m
+Author: kukucapel <loopnow0@gmail.com>
+Date:   Mon Mar 10 12:25:44 2025 +0300
+
+    1_0D History Structure Partnership
+
+[33mcommit d8bd19823e9a1bd6f057a7bcfdda0efa7c9c14a4[m
+Author: kukucapel <loopnow0@gmail.com>
+Date:   Wed Mar 5 16:43:08 2025 +0300
+
+    1_0D History Structure
+
+[33mcommit 5415e20d9ae9a7ae7f30bc1860d77a48c092b64a[m
+Author: kukucapel <loopnow0@gmail.com>
+Date:   Thu Feb 20 16:57:14 2025 +0300
+
+    3_0 Readers
+
+[33mcommit 05b3400dfb019747a13b5951b4f93fa9603e4e20[m
+Author: kukucapel <loopnow0@gmail.com>
+Date:   Wed Feb 19 16:40:37 2025 +0300
+
+    2_5_1 All about
+
+[33mcommit 46bb09172a52b0b6b380e55ced944078a399bf44[m
+Author: kukucapel <loopnow0@gmail.com>
+Date:   Wed Feb 19 13:32:13 2025 +0300
+
+    2_5 All about
+
+[33mcommit d2156ba2cbd5e73baabd941f6c6c290d3911964d[m
+Author: kukucapel <loopnow0@gmail.com>
+Date:   Mon Feb 17 12:31:04 2025 +0300
+
+    2_4 Mass media
+
+[33mcommit 98e61d1ad95e5c3a59cb3b7f4978a1ccbac4392c[m
+Author: kukucapel <loopnow0@gmail.com>
+Date:   Mon Feb 17 09:43:54 2025 +0300
+
+    2_2
+
+[33mcommit b20fc83719181fcfbaca9cd0418e001ab0605efe[m
+Author: kukucapel <loopnow0@gmail.com>
+Date:   Wed Jan 29 16:32:45 2025 +0300
+
+    2_1
+
+[33mcommit ebddc6b338ef122e0fcae75a0c385c0539e7724a[m
+Author: kukucapel <loopnow0@gmail.com>
+Date:   Wed Dec 25 13:45:05 2024 +0300
+
+    2_0
+
+[33mcommit 26aab917ea3d7f6029b90d9396c46c99d740697f[m
+Author: kukucapel <loopnow0@gmail.com>
+Date:   Mon Nov 25 16:43:07 2024 +0300
+
+    Add a function 'learn more' for news
+
+[33mcommit fd4b596508a0426278a7c816b0c046974f336e93[m
+Author: kukucapel <loopnow0@gmail.com>
+Date:   Mon Nov 25 15:29:50 2024 +0300
+
+    Add html template whithout django
+
+[33mcommit 9ffa1993598c281337de08a9e97f8a0cb7aeb8ea[m
+Author: kukucapel <loopnow0@gmail.com>
+Date:   Mon Nov 25 15:12:25 2024 +0300
+
+    Main changes README.md
+
+[33mcommit 81aa3e38266aafbb3ccebae8eb4d0f9e730b9904[m
+Author: kukucapel <loopnow0@gmail.com>
+Date:   Mon Nov 25 14:44:59 2024 +0300
+
+    test unicode
+
+[33mcommit 72fa169d72ee0058d6664995f800036a456a7ddb[m
+Author: kukucapel <loopnow0@gmail.com>
+Date:   Mon Nov 25 14:41:28 2024 +0300
+
+    requirements
+
+[33mcommit b0062799b1f22dcf017d31322f74f2400d120d02[m
+Author: kukucapel <loopnow0@gmail.com>
+Date:   Mon Nov 25 14:36:02 2024 +0300
+
+    1_0 Add main files
+
+[33mcommit 4ec551bf6062f9f01c6c0e13aa1841d67d68ae22[m
+Author: kukucapel <110260233+kukucapel@users.noreply.github.com>
+Date:   Mon Nov 25 14:28:30 2024 +0300
+
+    Initial commit

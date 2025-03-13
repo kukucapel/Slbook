@@ -399,18 +399,28 @@
             <span>Pastime</span>
           </div>
           {% elif name_part == "services" %}
-          <div>
             {% if number_part == 0 %}
-            
-            <span>services</span>
+            <h2 class="title_text">{{main_sevice_content.main_title}}</h2>
+            <div class="info_container paper">
+              <div class="info_content">
+                <h2 >{{main_sevice_content.top_title}}</h2>
+                <span class="text_block">{{main_sevice_content.main_text}}</span>
+                <h3>{{main_sevice_content.list_title}}</h3>
+                <div class="service_list_block">
+                  {% for el in main_service_list %}
+                    <a class="a_info" href="/readers/services/{{el.id}}">{{el.id}}). {{el.service}}</a>
+                  {% endfor %}
+                </div>
+                
+              </div>
+              
+            </div>
               
             {% elif number_part == 1 %}
 
             <span>Fuck</span>
 
             {% endif %}
-            
-          </div>
           {% elif name_part == "rules" %}
           <div>
             <span>Rules</span>

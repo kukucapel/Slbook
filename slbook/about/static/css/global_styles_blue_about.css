@@ -898,7 +898,6 @@ header{
     padding: 10px 20px;
     font-size: 20px;
     line-height: 1.5;
-    text-indent: 30px;
 }
 .text_container_media:hover{
 	box-shadow: 0 0 15px rgba(0,0,0,0.5);
