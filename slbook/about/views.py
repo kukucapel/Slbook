@@ -154,7 +154,7 @@ class FileBlockClass(ElementClass):
 
 
 def history(request, name_part = "history"):
-    all = ["history", "structure", "documents", "partnership", "official", "media"]
+    all_name_part = ["history", "structure", "documents", "partnership", "official", "media"]
 
     
     # array with all elements in block
@@ -191,7 +191,7 @@ def history(request, name_part = "history"):
     
 
 
-    if name_part in all:
+    if name_part in all_name_part:
         return render(request, 'index_about.html', {"name_part":name_part, "element":elem})
     else:
         return(HttpResponsePermanentRedirect("/"))
