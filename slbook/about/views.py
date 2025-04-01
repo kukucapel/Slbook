@@ -28,7 +28,7 @@ class ElementClass(ABC): # основные поля
         if self.el_list != None:
             print("List: ", self.el_list)
     
-    def check_any_children(self, elementParent, elentChildren):
+    def check_any_children(self, elementParent, elentChildren): # проверка, есть ли у родительского элемента элементы в другой таблице
         if elentChildren.objects.filter(id_element = elementParent.id_element):
             return True
         else:

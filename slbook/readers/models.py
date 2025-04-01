@@ -23,11 +23,13 @@ class ServiceElement(models.Model):
     priority = models.IntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(100)])
     
     title = models.CharField(max_length=200, default=None, null=True, blank=True)
+    
     text = models.TextField(max_length=65535, default=None, null=True, blank=True)
 
     contact_title = models.CharField(max_length=400, default=None, null=True, blank=True)
     contact_phone = models.CharField(max_length=400, default=None, null=True, blank=True)
     contact_form = models.CharField(max_length=400, default=None, null=True, blank=True)
+    contact_form_href = models.CharField(max_length=400, default=None, null=True, blank=True)
     contact_email = models.CharField(max_length=400, default=None, null=True, blank=True)
 
     list_title = models.CharField(max_length=100, default=None, null=True, blank=True)

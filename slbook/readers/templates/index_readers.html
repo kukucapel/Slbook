@@ -1,7 +1,24 @@
 {% load static %}
 <html>
   <head>
-    <title> Тестовая страница </title>
+
+    {% if name_part == "pastime" %}
+      <title>Досуг</title>
+    {% elif name_part == "services" %}
+      {% if number_part == 0 %}
+      <title>Услуги</title>
+      {% else %}
+      <title>{{name_service}}</title>
+      {% endif %}
+    {% elif name_part == "rules" %}
+      <title>Правила</title>
+    {% elif name_part == "facilities" %}
+      <title>Средства реабилитации</title>
+    {% elif name_part == "links" %}
+      <title>Полезные ссылки</title>
+    {% endif %}
+    
+  
 
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width">
@@ -399,11 +416,12 @@
             <span>Pastime</span>
           </div>
           {% elif name_part == "services" %}
+            <h2 class="title_text">{{main_sevice_content.main_title}}</h2>
             {% if number_part == 0 %}
 
-              <h2 class="title_text">{{main_sevice_content.main_title}}</h2>
-              <div class="info_container paper">
-                <div class="info_content">
+              
+              <div class="service_main_page_container paper">
+                <div class="service_main_page_content">
                   <h2 >{{main_sevice_content.top_title}}</h2>
                   <span class="text_block">{{main_sevice_content.main_text}}</span>
                   <h3>{{main_sevice_content.list_title}}</h3>
@@ -412,7 +430,7 @@
                       {% if el.service_href == "local" %}
                         <a class="a_info" href="/readers/services/{{el.id}}">{{el.id}}). {{el.service}}</a>
                       {% else %}
-                        <a class="a_info" href="{{el.service_href}}">{{el.id}}). {{el.service}}</a>
+                        <a class="a_info" target="_blank" href="{{el.service_href}}">{{el.id}}). {{el.service}}</a>
                       {% endif %}
                     {% endfor %}
                   </div>
@@ -420,9 +438,46 @@
               </div>
               
             {% else %}
+            <div class="service_container paper">
+              <h2 class="service_main_title">{{name_service}}</h2>
+              <div class="service_content">
+                
+                {% for elem in element %}
+                  {% if elem.el_type == "title" %}
+                    <h3 class="service_title">{{elem.el_value}}</h3>
+                  {% elif elem.el_type == "text" %}
+                    <span class="text_block">{{elem.el_value|safe}}</span>
+                  {% elif elem.el_type == "list" %}
+                    {% if elem.el_value != None %}
+                      <h4 class="service_title">{{elem.el_value}}</h4>
+                    {% endif %}
+                    <div class="text_help">
+                      {% for list in elem.el_list %}
+                        <span class="text_block">• {{list.list_element}}</span>
+                      {% endfor %}
+                    </div>
+                    
+                  {% elif elem.el_type == "contact" %}
+                  <div class="structure_list">
+                    {% if elem.el_list.0 %}
+                      <h3 class="service_title">{{elem.el_list.0}}</h3>
+                    {% endif %}
+                    {% if elem.el_list.1%}
+                      <span class="text_block">Тел.: {{elem.el_list.1}}</span>
+                    {% endif %}
+                    {% if elem.el_list.2%}
+                      <span class="text_block"><a class="a_info" href="{{elem.el_list.3}}">{{elem.el_list.2}}</a></span>
+                    {% endif %}
+                    {% if elem.el_list.4%}
+                      <span class="text_block">E-mail: <a class="a_info" href="mailto:{{elem.el_list.4}}">{{elem.el_list.4}}</a></span>
+                    {% endif %}
+                  </div>
+                  {% endif %}          
+                {% endfor %}
+              </div>
+            </div>
+            
 
-            <span>{{name_service}}</span>
-            <span>{{test|safe}}</span>
 
             {% endif %}
           {% elif name_part == "rules" %}

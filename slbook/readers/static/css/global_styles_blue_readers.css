@@ -725,7 +725,7 @@ header{
 	margin: 10px 0px;
 }
 
-.info_container {
+.service_main_page_container {
     max-width: 900px;
     display: flex;
     flex-direction: column;
@@ -736,7 +736,7 @@ header{
 	line-height: 1.5;
 	padding-left: 25px;
 }
-.info_content {
+.service_main_page_content {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -759,7 +759,45 @@ header{
 	color:#134C85
 }
 
-
+.service_container{
+	width: 900px;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #134C85;
+    font-family: Bahnschrift;
+    white-space: pre-wrap;
+	line-height: 1.5;
+	padding-left: 25px;
+}
+.service_content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-right: 30px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding-left: 15px;
+}
+.service_main_title {
+	margin-top: 20px;
+	text-align: center;
+}
+.service_title {
+	margin-top: 10px;
+	font-style: italic;
+	align-self: flex-start;
+}
+.structure_list{
+	margin-top: 30px;
+	margin-bottom: 20px;
+	margin-left: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-items: flex-start;
+	align-items: flex-start;
+	align-self: flex-start
+}
 
 
 .title_text{
@@ -883,11 +921,11 @@ header{
 	white-space: pre-wrap;
 }
 .text_help{
-	width: 1190px;
+	width: 800px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	margin-left: 70px;
+	margin-left: 5px;
 	font-style: oblique;
 	margin-bottom: 20px;
 }
