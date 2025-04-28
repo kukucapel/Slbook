@@ -413,7 +413,7 @@
         <div class="main_content" id="main_content">
           {% if name_part == "pastime" %}
           <div>
-            <span>Pastime</span>
+            <span>{{name_part}}</span>
           </div>
           {% elif name_part == "services" %}
             <h2 class="title_text">{{main_sevice_content.main_title}}</h2>
@@ -481,8 +481,32 @@
 
             {% endif %}
           {% elif name_part == "rules" %}
-          <div>
-            <span>Rules</span>
+          <div class="rule_container paper">
+            <div class="rule_title_container">
+              <h3 class="rule_main_title">{{main_rule_content.title}}</h2>
+              <span>{{main_rule_content.text_title}}</span>
+              <span class="rule_title_optional">{{main_rule_content.optional_text_title}}</span>
+            </div>
+            <div class="rule_content">
+              {% for elem in element %}
+                {% if elem %}
+                  {% for el in elem %}
+                    {% if el.el_type == "title" %}
+                      <h3 class="rule_content_title">{{el.el_value}}</h3>    
+                    {% elif el.el_type == "text" %}
+                      <span class="text_block">{{el.el_value}}</span>    
+                      {% if el.el_list != None %}
+                        <div class = "rule_list_container">
+                          {% for list in el.el_list %}
+                            <span class="rule_list_content">- {{list.list_element}}</span>
+                          {% endfor %}
+                        </div>
+                      {% endif %}
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+              {% endfor %}
+            </div>
           </div>
 
           {% elif name_part == "facilities" %}

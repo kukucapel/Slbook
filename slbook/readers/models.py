@@ -41,3 +41,31 @@ class ServiceList(models.Model):
     id_element = models.ForeignKey(ServiceElement, on_delete=models.CASCADE)
     list_element = models.CharField(max_length=400, default=None, null=True, blank=True)
  
+
+class RuleTitle(models.Model):
+    title = models.CharField(max_length=200, default=None, null=True, blank=True)
+    text_title = models.CharField(max_length=600, default=None, null=True, blank=True)
+    optional_text_title = models.CharField(max_length=600, default=None, null=True, blank=True)
+
+
+class RuleBlock(models.Model):
+    priority = models.IntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(100)])
+    
+    def __str__(self):
+        return str(self.priority)
+    
+
+class RuleElement(models.Model):
+    id_block = models.ForeignKey(RuleBlock, on_delete=models.CASCADE)
+    priority = models.IntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(100)])
+
+    title = models.CharField(max_length=200, default=None, null=True, blank=True)
+
+    text = models.TextField(max_length=65535, default=None, null=True, blank=True)
+
+class RuleElementList(models.Model):
+    id_element = models.ForeignKey(RuleElement, on_delete=models.CASCADE)
+    list_element = models.CharField(max_length=1000, default=None, null=True, blank=True)
+
+    def __str__(self):
+        return str(self.id_element)

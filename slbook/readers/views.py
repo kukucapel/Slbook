@@ -59,10 +59,7 @@ class ElementServiceClass(ElementClass):
             self.el_list = ServiceList.objects.filter(id_element = elementService.id)
     
     def text_conversion(self, serviceText):
-        #self.el_value = serviceText.replace(r"%a:", "FUCK")
-        #print(re.sub(r"!a:(.)*!", "FUCK", serviceText))
-        #print(re.sub(r"!bc:(.)*!", "FUCK", serviceText))
-        #print(self.el_value)
+
         self.el_value = serviceText
         while "!a:" in self.el_value:
             temp = re.search(r'!a:(.)*\s(.)*\s!', self.el_value)
@@ -81,8 +78,25 @@ class ElementServiceClass(ElementClass):
             return False
 
 
+class ElementRuleClass(ElementClass):
+    def ident_typpe(self, elementRule):
+        if elementRule.title != None:
+            self.el_type = "title"
+            self.el_value = str(elementRule.id_block) + ". " + str(elementRule.title)
+        elif elementRule.text != None or self.check_any_children(elementRule, RuleElementList):
+            self.el_type = "text"
+            self.el_value = str(elementRule.id_block) + "." + str(elementRule.priority - 1) + " " + str(elementRule.text)
+            if self.check_any_children(elementRule, RuleElementList):
+                self.el_list = RuleElementList.objects.filter(id_element = elementRule.id)
+    
+    def __init__(self, elementRule):
+        self.ident_typpe(elementRule)
+            
+
 def main(request, name_part = "pastime"):
     print(name_part)
+    temp = []
+    elem = []
     if name_part in ALL_NAME_PART:
         if name_part == "services":
             
@@ -90,6 +104,24 @@ def main(request, name_part = "pastime"):
                                                           "number_part":0, 
                                                           "main_sevice_content":MainPageService.objects.all()[0], 
                                                           "main_service_list":MainPageServiceList.objects.filter(main_page_fk = 1)})
+        elif name_part == "pastime":
+
+            return render(request, 'index_readers.html', {"name_part":name_part, 
+                                                          "number_part":0, 
+                                                          "main_sevice_content":MainPageService.objects.all()[0], 
+                                                          "main_service_list":MainPageServiceList.objects.filter(main_page_fk = 1)})
+        elif name_part == "rules":
+            for block in RuleBlock.objects.all().order_by('priority'):
+                for element in RuleElement.objects.filter(id_block = block.id).order_by('priority'):
+                    temp.append(ElementRuleClass(element))
+                elem.append(temp)
+                temp = []
+            for i in elem:
+                for k in i:
+                    k.view_all_field()
+            return render(request, 'index_readers.html', {"name_part":name_part,
+                                                          "main_rule_content":RuleTitle.objects.all()[0], 
+                                                          "element":elem})
         else:
             return render(request, 'index_readers.html', {"name_part":name_part})
     else:
@@ -115,3 +147,4 @@ def services(request, number_part = 1):
                        )
     else:
         return(HttpResponsePermanentRedirect("/"))
+    
