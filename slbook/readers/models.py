@@ -62,10 +62,35 @@ class RuleElement(models.Model):
     title = models.CharField(max_length=200, default=None, null=True, blank=True)
 
     text = models.TextField(max_length=65535, default=None, null=True, blank=True)
+    def __str__(self):
+        return str(self.id_block)
 
 class RuleElementList(models.Model):
     id_element = models.ForeignKey(RuleElement, on_delete=models.CASCADE)
     list_element = models.CharField(max_length=1000, default=None, null=True, blank=True)
 
+    def __str__(self):
+        return str(self.id_element)
+
+
+class FacilitiesBlock(models.Model):
+    priority = models.IntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(100)])
+    title_block = models.CharField(max_length=1000, default=None, null=True, blank=True)
+    def __str__(self):
+        return str(self.id)
+
+class FacilitiesElement(models.Model):
+    id_block = models.ForeignKey(FacilitiesBlock, on_delete=models.CASCADE)
+    priority = models.IntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(100)])
+
+    title_element = models.CharField(max_length=1000, default=None, null=True, blank=True)
+    
+    href = models.CharField(max_length=1000, default=None, null=True, blank=True)
+    def __str__(self):
+        return str(self.id_block)
+    
+class FacilitiesTextList(models.Model):
+    id_element = models.ForeignKey(FacilitiesElement, on_delete=models.CASCADE)
+    text = models.CharField(max_length=1000, default=None, null=True, blank=True)
     def __str__(self):
         return str(self.id_element)

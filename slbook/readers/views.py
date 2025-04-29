@@ -77,6 +77,13 @@ class ElementServiceClass(ElementClass):
         else:
             return False
 
+class facilitiesClass:
+    model_facilities = None
+    el_list = None
+    
+    def __init__(self, model):
+        self.model_facilities = model
+        self.el_lis = FacilitiesTextList.objects.filter(id_element = model.id)
 
 class ElementRuleClass(ElementClass):
     def ident_typpe(self, elementRule):
@@ -121,6 +128,16 @@ def main(request, name_part = "pastime"):
                     k.view_all_field()
             return render(request, 'index_readers.html', {"name_part":name_part,
                                                           "main_rule_content":RuleTitle.objects.all()[0], 
+                                                          "element":elem})
+        elif name_part == "facilities":
+            for block in FacilitiesBlock.objects.all().order_by('priority'):
+                temp.append(block.title_block)
+                for element in FacilitiesElement.objects.filter(id_block = block.id).order_by('priority'):
+                    temp.append(element)
+                elem.append(temp)
+                temp = []
+            
+            return render(request, 'index_readers.html', {"name_part":name_part,
                                                           "element":elem})
         else:
             return render(request, 'index_readers.html', {"name_part":name_part})

@@ -855,6 +855,19 @@ header{
 	font-size: 50px;
 }
 
+.facilities_main_container{
+	display: flex;
+	width: 1200px;
+	flex-direction: column;
+}
+.facilities_element_container{
+	display: flex;
+	flex-direction: column;
+}
+
+
+
+
 .text_container {
 	margin-top: 15px;
 	margin-bottom: 15px;

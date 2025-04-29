@@ -510,8 +510,26 @@
           </div>
 
           {% elif name_part == "facilities" %}
-          <div>
-            <span>Facilities</span>
+          <h2 class="title_text">Средства реабилитации</h2>
+          <div class="facilities_main_container">
+            {% for elem in element %}
+              <div class="facilities_main_container paper">
+                <span class="h_text">{{elem.0}}</span>
+                {% for el in elem %}
+                  {% if el != elem.0 %}
+                    <div class="facilities_element_container">
+                      <span>{{el.title_element}}</span>
+                      <span>{{el.href}}</span>
+                      {% for list in el.model_facilities %}
+                        
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                 
+                {% endfor %}
+              </div>
+              
+            {% endfor %}
           </div>         
           {% elif name_part == "links" %}
           <div>

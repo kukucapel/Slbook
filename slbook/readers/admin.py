@@ -35,3 +35,17 @@ class RuleElementListInline(admin.TabularInline):
 class RuleElementAdmin(admin.ModelAdmin):
     inlines = [RuleElementListInline,]
     list_display = ['priority', 'title', 'text']
+
+
+
+class FacilitiesTextListInline(admin.TabularInline):
+    fk_name = "id_element"
+    model = FacilitiesTextList
+@admin.register(FacilitiesElement)
+class FacilitiesElementkAdmin(admin.ModelAdmin):
+    inlines = [FacilitiesTextListInline,]
+    list_display = ['id_block', 'priority', 'title_element', 'href']
+
+@admin.register(FacilitiesBlock)
+class FacilitiesBlockAdmin(admin.ModelAdmin):
+    list_display = ['title_block', 'priority']
