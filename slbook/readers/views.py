@@ -94,14 +94,14 @@ class ElementRuleClass(ElementClass):
         self.ident_typpe(elementRule)
             
 
-class FacilitiesClass(ElementClass):
-    model_facilities = None
+class LinksClass(ElementClass):
+    model_links = None
 
     
     def __init__(self, model):
-        self.model_facilities = model
-        if FacilitiesTextList.objects.filter(id_element = model.id):
-            self.el_list = FacilitiesTextList.objects.filter(id_element = model.id)
+        self.model_links = model
+        if LinksTextList.objects.filter(id_element = model.id):
+            self.el_list = LinksTextList.objects.filter(id_element = model.id)
 
 
 def main(request, name_part = "pastime"):
@@ -134,11 +134,11 @@ def main(request, name_part = "pastime"):
             return render(request, 'index_readers.html', {"name_part":name_part,
                                                           "main_rule_content":RuleTitle.objects.all()[0], 
                                                           "element":elem})
-        elif name_part == "facilities":
-            for block in FacilitiesBlock.objects.all().order_by('priority'):
+        elif name_part == "links":
+            for block in LinksBlock.objects.all().order_by('priority'):
                 temp.append(block.title_block)
-                for element in FacilitiesElement.objects.filter(id_block = block.id).order_by('priority'):
-                    temp.append(FacilitiesClass(element))
+                for element in LinksElement.objects.filter(id_block = block.id).order_by('priority'):
+                    temp.append(LinksClass(element))
                 elem.append(temp)
                 temp = [] 
             return render(request, 'index_readers.html', {"name_part":name_part,

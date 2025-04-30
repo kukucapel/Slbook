@@ -38,14 +38,14 @@ class RuleElementAdmin(admin.ModelAdmin):
 
 
 
-class FacilitiesTextListInline(admin.TabularInline):
+class LinksTextListInline(admin.TabularInline):
     fk_name = "id_element"
-    model = FacilitiesTextList
-@admin.register(FacilitiesElement)
-class FacilitiesElementkAdmin(admin.ModelAdmin):
-    inlines = [FacilitiesTextListInline,]
+    model = LinksTextList
+@admin.register(LinksElement)
+class LinksElementkAdmin(admin.ModelAdmin):
+    inlines = [LinksTextListInline,]
     list_display = ['id_block', 'priority', 'title_element', 'href']
 
-@admin.register(FacilitiesBlock)
-class FacilitiesBlockAdmin(admin.ModelAdmin):
+@admin.register(LinksBlock)
+class LinksBlockAdmin(admin.ModelAdmin):
     list_display = ['title_block', 'priority']

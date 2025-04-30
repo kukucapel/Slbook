@@ -510,19 +510,21 @@
           </div>
 
           {% elif name_part == "facilities" %}
-          <h2 class="title_text">Средства реабилитации</h2>
-          <div class="facilities_main_container">
+                   
+          {% elif name_part == "links" %}
+          <h2 class="title_text">Полезные ссылки</h2>
+          <div class="links_main_container">
             {% for elem in element %}
-              <div class="facilities_main_container paper">
+              <div class="links_main_container paper">
                 <span class="h_text">{{elem.0}}</span>
                 {% for el in elem %}
                   {% if el != elem.0 %}
-                    <div class="facilities_element_container">
-                      <span class="h_str">{{el.model_facilities.title_element}}</span>
+                    <div class="links_element_container">
+                      <span class="h_str">{{el.model_links.title_element}}</span>
                       {% for list in el.el_list %}
                         <span class="text_block">{{list.text}}</span>
                       {% endfor %}
-                     <span class="text_block"><a href="{{el.model_facilities.href}}" class="a_info" target="_blank">{{el.model_facilities.href}}</a></span>
+                     <span class="text_block"><a href="{{el.model_links.href}}" class="a_info" target="_blank">{{el.model_links.href}}</a></span>
                       
                     </div>
                   {% endif %}
@@ -531,10 +533,6 @@
               </div>
               
             {% endfor %}
-          </div>         
-          {% elif name_part == "links" %}
-          <div>
-            <span>Links</span>
           </div>
           {% endif %}
         </div>
