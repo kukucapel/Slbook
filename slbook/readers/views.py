@@ -77,13 +77,7 @@ class ElementServiceClass(ElementClass):
         else:
             return False
 
-class facilitiesClass:
-    model_facilities = None
-    el_list = None
-    
-    def __init__(self, model):
-        self.model_facilities = model
-        self.el_lis = FacilitiesTextList.objects.filter(id_element = model.id)
+
 
 class ElementRuleClass(ElementClass):
     def ident_typpe(self, elementRule):
@@ -99,6 +93,16 @@ class ElementRuleClass(ElementClass):
     def __init__(self, elementRule):
         self.ident_typpe(elementRule)
             
+
+class FacilitiesClass(ElementClass):
+    model_facilities = None
+
+    
+    def __init__(self, model):
+        self.model_facilities = model
+        if FacilitiesTextList.objects.filter(id_element = model.id):
+            self.el_list = FacilitiesTextList.objects.filter(id_element = model.id)
+
 
 def main(request, name_part = "pastime"):
     print(name_part)
@@ -126,6 +130,7 @@ def main(request, name_part = "pastime"):
             for i in elem:
                 for k in i:
                     k.view_all_field()
+            
             return render(request, 'index_readers.html', {"name_part":name_part,
                                                           "main_rule_content":RuleTitle.objects.all()[0], 
                                                           "element":elem})
@@ -133,10 +138,9 @@ def main(request, name_part = "pastime"):
             for block in FacilitiesBlock.objects.all().order_by('priority'):
                 temp.append(block.title_block)
                 for element in FacilitiesElement.objects.filter(id_block = block.id).order_by('priority'):
-                    temp.append(element)
+                    temp.append(FacilitiesClass(element))
                 elem.append(temp)
-                temp = []
-            
+                temp = [] 
             return render(request, 'index_readers.html', {"name_part":name_part,
                                                           "element":elem})
         else:
